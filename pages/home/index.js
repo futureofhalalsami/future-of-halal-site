@@ -17,6 +17,8 @@ import { useEffect, useRef, useState } from 'react'
 import { useIntersection, useWindowSize } from 'react-use'
 import ParticleBackground from 'components/particles-background'
 import ScrollingText from 'components/scrolling-text'
+import Section2Content from 'components/sections/section2'
+import Section3Content from 'components/sections/section3'
 import s from './home.module.scss'
 
 const SFDR = dynamic(() => import('icons/sfdr.svg'), { ssr: false })
@@ -117,6 +119,7 @@ export default function Home() {
   })
 
   const [whyRectRef, whyRect] = useRect()
+  const [powerUpRectRef, powerUpRect] = useRect()
   const [cardsRectRef, cardsRect] = useRect()
   const [whiteRectRef, whiteRect] = useRect()
   const [featuresRectRef, featuresRect] = useRect()
@@ -127,6 +130,15 @@ export default function Home() {
   useEffect(() => {
     addThreshold({ id: 'top', value: 0 })
   }, [])
+
+  useEffect(() => {
+    const top = powerUpRect.top - windowHeight / 2
+    addThreshold({ id: 'power-up-start', value: top })
+    addThreshold({
+      id: 'power-up-end',
+      value: top + powerUpRect.height,
+    })
+  }, [powerUpRect])
 
   useEffect(() => {
     const top = whyRect.top - windowHeight / 2
@@ -305,6 +317,24 @@ export default function Home() {
           />
         </div>
       </section>
+
+      <section
+        ref={powerUpRectRef}
+        className={
+          'section2 h-auto lg:h-screen w-screen flex flex-col justify-center items-center'
+        }
+      >
+        <Section2Content />
+      </section>
+      {/* <section
+        className={
+          'section3 h-[50vh] w-screen flex items-center overflow-hidden whitespace-nowrap'
+        }
+        ref={whiteRectRef}
+      >
+        <Section3Content />
+      </section> */}
+
       <section className={s.why} data-lenis-scroll-snap-align="start">
         <div className="layout-grid">
           <h2 className={cn(s.sticky, 'h2')}>Why smooth scroll?</h2>
