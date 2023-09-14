@@ -64,7 +64,12 @@ class Environment {
       1,
       10000
     )
-    this.camera.position.set(0, 0, 100)
+    debugger
+    if (this.container.clientWidth < 420) {
+      this.camera.position.set(0, 0, 150)
+    } else {
+      this.camera.position.set(0, 0, 100)
+    }
   }
 
   createRenderer() {
