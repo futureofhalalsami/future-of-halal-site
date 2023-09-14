@@ -40,25 +40,25 @@ export function CustomHead({ title = '', description, image, keywords }) {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/apple-touch-icon.png"
+          href="/images/logo.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/favicon-32x32.png"
+          href="/images/logo.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/favicon-16x16.png"
+          href="/images/logo.png"
         />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#ff98a2" />
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="theme-color" content="#ffffff" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/logo.png" />
         {/* END FAVICON */}
       </NextHead>
       <NextSeo
@@ -71,7 +71,7 @@ export function CustomHead({ title = '', description, image, keywords }) {
           locale: 'en_US',
           images: [
             {
-              url: image ? image.url : 'https://lenis.studiofreight.com/og.jpg',
+              url: image ? image.url : '/images/logo.png',
               width: image ? image.width : 1200,
               height: image ? image.height : 630,
               alt: title,
@@ -81,10 +81,10 @@ export function CustomHead({ title = '', description, image, keywords }) {
           defaultImageHeight: 630,
           site_name: '',
         }}
-        twitter={{
-          handle: '@studiofreight',
-          cardType: 'summary_large_image',
-        }}
+        // twitter={{
+        //   handle: '@studiofreight',
+        //   cardType: 'summary_large_image',
+        // }}
       />
     </>
   )

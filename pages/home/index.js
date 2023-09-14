@@ -231,9 +231,9 @@ export default function Home() {
     <Layout
       theme={theme}
       seo={{
-        title: 'Lenis – Get smooth or die trying',
+        title: 'Future of Halal | CEO SAMI',
         description:
-          'A new smooth scroll library fresh out of the Studio Freight Darkroom',
+          'Future of Halal | CEO SAMI',
       }}
       className={s.home}
     >
