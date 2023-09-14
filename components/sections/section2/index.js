@@ -26,8 +26,8 @@ export default function Section2() {
 
 function MobileTabletView() {
   return (
-    <div className="block lg:hidden">
-      <p className="text-[1.7rem] md:text-[2rem] lg:text-[4rem] xl:text-[6rem] text-center text-teal-300 uppercase pt-8 font-uniform mb-8">
+    <div className="block lg:hidden my-8">
+      <p className="text-[2.2rem] md:text-[2rem] lg:text-[4rem] xl:text-[6rem] text-center text-teal-300 uppercase pt-8 font-uniform mb-8">
         {heading}
       </p>
 
@@ -49,7 +49,9 @@ function MobileTabletView() {
       <h6 className="text-teal-300 text-2xl font-extrabold px-2">
         {subHeading2}
       </h6>
-      <p className="text-slate-100 text-md font-normal my-4 px-2 mb-16">{subText2}</p>
+      <p className="text-slate-100 text-md font-normal my-4 px-2 mb-16">
+        {subText2}
+      </p>
     </div>
   )
 }
@@ -62,7 +64,7 @@ function DesktopLaptopView() {
   }, [])
 
   return (
-    <div className="hidden lg:grid grid-cols-1 lg:grid-cols-6 grid-rows-5 gap-4 w-screen h-screen px-12">
+    <div className="hidden lg:grid grid-cols-1 lg:grid-cols-6 grid-rows-4 gap-4 w-screen h-screen px-12">
       <div className="col-start-1 col-end-7 row-span-1 rounded-lg m-2 p-2">
         <p className="text-[1.7rem] md:text-[2rem] lg:text-[4rem] xl:text-[6rem] text-center text-teal-300 uppercase font-uniform">
           {heading}

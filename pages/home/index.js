@@ -1,6 +1,5 @@
 import { useRect } from '@studio-freight/hamo'
 import cn from 'clsx'
-
 import Button from 'components/controls/button'
 import { Card } from 'components/card'
 import { Title } from 'components/intro'
@@ -231,9 +230,9 @@ export default function Home() {
       }}
       className={s.home}
     >
-      <div className={s.canvas}>
+      {/* <div className={s.canvas}>
         <WebGL />
-      </div>
+      </div> */}
 
       <ParticleBackground />
 
@@ -326,14 +325,15 @@ export default function Home() {
       >
         <Section2Content />
       </section>
-      {/* <section
+
+      <section
         className={
           'section3 h-[50vh] w-screen flex items-center overflow-hidden whitespace-nowrap'
         }
         ref={whiteRectRef}
       >
         <Section3Content />
-      </section> */}
+      </section>
 
       <section className={s.why} data-lenis-scroll-snap-align="start">
         <div className="layout-grid">

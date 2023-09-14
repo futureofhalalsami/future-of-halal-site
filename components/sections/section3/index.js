@@ -37,14 +37,14 @@ function MobileView() {
 
   return (
     <div className="overflow-hidden whitespace-nowrap h-auto w-full">
-      <p className="section3-heading-mobile text-[4rem] text-blue-950 font-extrabold uppercase">
-        About
+      <p className="section3-heading-mobile text-[4rem] text-teal-300 font-extrabold uppercase">
+        About Future
       </p>
-      <p className="section3-heading-mobile text-[4rem] text-blue-950 font-extrabold uppercase">
-        the
+      <p className="section3-heading-mobile text-[4rem] text-teal-300 font-extrabold uppercase">
+        of Halal
       </p>
-      <p className="section3-heading-mobile text-[4rem] text-blue-950 font-extrabold uppercase">
-        Author
+      <p className="section3-heading-mobile text-[4rem] text-teal-300 font-extrabold uppercase">
+        & CEO SAMI
       </p>
     </div>
   )
