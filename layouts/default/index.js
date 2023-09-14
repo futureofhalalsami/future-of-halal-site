@@ -4,6 +4,7 @@ import { CustomHead } from 'components/custom-head'
 import { Footer } from 'components/footer'
 import { Intro } from 'components/intro'
 import { Scrollbar } from 'components/scrollbar'
+import Navigation from 'components/navigation'
 import { useStore } from 'lib/store'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/router'
@@ -104,6 +105,7 @@ export function Layout({
         <Intro />
         <Cursor />
         <Scrollbar />
+        <Navigation />
         <main className={s.main}>{children}</main>
         <Footer />
       </div>
