@@ -190,6 +190,25 @@ export default function Home() {
     }
   }, [intersection])
 
+  // Hero section
+  const scrollingTextRef = useRef()
+  const hexa1Ref = useRef()
+  const hexa2Ref = useRef()
+  const setHeroSectionRefs = useStore(
+    ({ setHeroSectionRefs }) => setHeroSectionRefs
+  )
+  const heroSectionRefs = useStore(({ heroSectionRefs }) => heroSectionRefs)
+
+  useEffect(() => {
+    if (!heroSectionRefs) {
+      setHeroSectionRefs({
+        scrollingTextRef,
+        hexa1Ref,
+        hexa2Ref,
+      })
+    }
+  }, [heroSectionRefs])
+
   return (
     <Layout
       theme={theme}
@@ -209,7 +228,9 @@ export default function Home() {
       <section className={cn(s.hero, 'overflow-hidden')}>
         <div className="layout-grid-inner mt-36 w-screen">
           {/* <Title className={s.title} /> */}
-          <ScrollingText text="Future of Halal" />
+          <div ref={scrollingTextRef} className={cn('opacity-0')}>
+            <ScrollingText text="Future of Halal" />
+          </div>
 
           {/* <SFDR className={cn(s.icon, introOut && s.show)} /> */}
 
@@ -254,19 +275,33 @@ export default function Home() {
               </HeroTextIn>
             </div>
           </div>
-          {/* <Button
-            className={cn(s.cta, introOut && s.in, 'ultimate-z-index')}
-            arrow
-            icon={<GitHub />}
-            href="https://github.com/studio-freight/lenis"
-          >
-            Check it out on github
-          </Button> */}
 
-          <Button
-            classNameCustom="col-span-12 md:col-span-2 md:col-start-11"
-            text="Join the Waitlist"
-            theme="light"
+          <div
+            className={cn(
+              s.cta,
+              introOut && s.in,
+              'col-span-12 md:col-span-2 md:col-start-11'
+            )}
+          >
+            <Button
+              text="Join the Waitlist"
+              classNameCustom="w-full ml-0 md:w-full md:m-auto lg:w-auto lg:m-0 lg:ml-auto"
+              theme="light"
+            />
+          </div>
+
+          <img
+            ref={hexa1Ref}
+            src="/images/Hexa1.png"
+            className="absolute ml-[100px] w-[250px] top-24 blur-sm z-[-10] opacity-0 rotate-[35deg]"
+            alt="strawberry"
+          />
+
+          <img
+            ref={hexa2Ref}
+            src="/images/Hexa2.png"
+            className="absolute right-0 bottom-0 blur-sm z-[-10] opacity-0 rotate-[-20deg] w-[250px] lg:w-auto"
+            alt="lemon"
           />
         </div>
       </section>

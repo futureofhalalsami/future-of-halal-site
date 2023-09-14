@@ -3,6 +3,7 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useFrame as useRaf } from '@studio-freight/hamo'
 import { useScroll } from 'hooks/use-scroll'
 import { button, useControls } from 'leva'
+import { gsap, Power4 } from 'gsap'
 import { mapRange } from 'lib/maths'
 import { useStore } from 'lib/store'
 import { Suspense, useEffect, useMemo, useRef, useState } from 'react'
@@ -14,7 +15,7 @@ import {
   MeshPhysicalMaterial,
   Vector2,
   Vector3,
-  MeshStandardMaterial
+  MeshStandardMaterial,
 } from 'three'
 import fragmentShader from './particles/fragment.glsl'
 import vertexShader from './particles/vertex.glsl'
@@ -476,6 +477,59 @@ export function Arm() {
 
   // const [target, setTarget] = useState()
 
+  const heroSectionRefs = useStore(({ heroSectionRefs }) => heroSectionRefs)
+
+  useEffect(() => {
+    if (parent.current) {
+      const t1 = gsap.timeline().delay(1)
+      t1.to(heroSectionRefs.hexa1Ref.current, {
+        delay: 1,
+        opacity: 1,
+        duration: 1,
+        x: -200,
+        stagger: 0.4,
+        immediateRender: false,
+        rotate: 0,
+      })
+        .to(
+          heroSectionRefs.hexa2Ref.current,
+          {
+            opacity: 1,
+            x: 100,
+            duration: 1,
+            rotate: 0,
+          },
+          '<'
+        )
+        // .to(
+        //   parent.current.position,
+        //   {
+        //     y: 0,
+        //     duration: 4,
+        //     ease: Power4.easeOut,
+        //   },
+        //   '<'
+        // )
+        // .to(
+        //   parent.current.rotation,
+        //   {
+        //     z: MathUtils.degToRad(30),
+        //     y: 0,
+        //     // duration: 2,
+        //     ease: Power4.easeOut,
+        //   },
+        //   '<'
+        // )
+        .to(
+          heroSectionRefs.scrollingTextRef.current,
+          {
+            opacity: 1,
+          },
+          '<'
+        )
+    }
+  }, [parent.current])
+
   return (
     <>
       <ambientLight args={[new Color(ambientColor)]} />
@@ -505,8 +559,24 @@ export function Arm() {
           // ]}
         >
           {/* <TransformControls mode="rotate"> */}
-          {type === 1 && <primitive object={arm1} scale={[40, 40, 40]} material={new MeshStandardMaterial({ metalness: 40, roughness: 0 })} />}
-          {type === 2 && <primitive object={arm2} scale={[40, 40, 40]} material={new MeshStandardMaterial({ metalness: 1, roughness: 0 })} />}
+          {type === 1 && (
+            <primitive
+              object={arm1}
+              scale={[40, 40, 40]}
+              material={
+                new MeshStandardMaterial({ metalness: 40, roughness: 0 })
+              }
+            />
+          )}
+          {type === 2 && (
+            <primitive
+              object={arm2}
+              scale={[40, 40, 40]}
+              material={
+                new MeshStandardMaterial({ metalness: 1, roughness: 0 })
+              }
+            />
+          )}
           {/* </TransformControls> */}
         </group>
       </Float>
