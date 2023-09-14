@@ -56,6 +56,7 @@ function MyApp({ Component, pageProps }) {
     window.history.scrollRestoration = 'manual'
   }, [])
 
+  // ScrollTrigger.defaults({ markers: process.env.NODE_ENV === 'development' })
   ScrollTrigger.defaults({ markers: process.env.NODE_ENV === 'development' })
 
   return (

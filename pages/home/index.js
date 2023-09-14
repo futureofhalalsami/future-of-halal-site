@@ -320,7 +320,7 @@ export default function Home() {
       <section
         ref={powerUpRectRef}
         className={
-          'section2 h-auto lg:h-screen w-screen flex flex-col justify-center items-center'
+          'section2 h-auto lg:h-screen w-full overflow-hidden flex flex-col justify-center items-center'
         }
       >
         <Section2Content />
@@ -328,7 +328,7 @@ export default function Home() {
 
       <section
         className={
-          'section3 h-[50vh] w-screen flex items-center overflow-hidden whitespace-nowrap'
+          'section3 h-[50vh] w-full flex items-center overflow-hidden whitespace-nowrap'
         }
         ref={whiteRectRef}
       >
