@@ -18,6 +18,7 @@ import ParticleBackground from 'components/particles-background'
 import ScrollingText from 'components/scrolling-text'
 import Section2Content from 'components/sections/section2'
 import Section3Content from 'components/sections/section3'
+import TextExperience from 'components/webgl/text-experience'
 import s from './home.module.scss'
 
 const SFDR = dynamic(() => import('icons/sfdr.svg'), { ssr: false })
@@ -123,6 +124,7 @@ export default function Home() {
   const [whiteRectRef, whiteRect] = useRect()
   const [featuresRectRef, featuresRect] = useRect()
   const [inuseRectRef, inuseRect] = useRect()
+  const [threeDTextRef, threeDTextRect] = useRect()
 
   const addThreshold = useStore(({ addThreshold }) => addThreshold)
 
@@ -177,6 +179,11 @@ export default function Home() {
     const top = lenis?.limit
     addThreshold({ id: 'end', value: top })
   }, [lenis?.limit])
+
+  useEffect(() => {
+    const top = threeDTextRect.top
+    addThreshold({ id: 'three-d', value: top })
+  }, [threeDTextRect])
 
   useScroll((e) => {
     // console.log(
@@ -450,6 +457,14 @@ export default function Home() {
             ))}
           </ul>
         </div>
+      </section>
+      <section
+        className={
+          'h-screen w-full flex justify-center items-center relative'
+        }
+        ref={threeDTextRef}
+      >
+        <TextExperience />
       </section>
     </Layout>
   )

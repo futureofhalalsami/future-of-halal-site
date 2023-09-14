@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-sync-scripts */
 /* eslint-disable @next/next/no-document-import-in-page */
 import { Head, Html, Main, NextScript } from 'next/document'
 
@@ -52,6 +53,7 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r125/three.min.js"></script>
       </body>
     </Html>
   )

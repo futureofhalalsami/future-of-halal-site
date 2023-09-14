@@ -99,3 +99,13 @@ svg.icon {
 .font-uniform {
   font-family: var(--font-secondary) !important;
 }
+
+#magic {
+  // position: fixed;
+  width: 100%;
+  height: 100vh;
+  display: block;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
