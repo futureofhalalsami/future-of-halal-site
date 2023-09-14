@@ -206,8 +206,7 @@ export default function Home() {
       <ParticleBackground />
 
       <section className={s.hero}>
-        <div className="layout-grid-inner">
-          {/* <h1 style={{ position: 'absolute', bottom: 0, left: 0, zIndex: 999, fontSize: '4rem' }}>Hello World</h1> */}
+        <div className="layout-grid-inner mt-36">
           <Title className={s.title} />
           <SFDR className={cn(s.icon, introOut && s.show)} />
           <span className={cn(s.sub)}>
@@ -252,7 +251,7 @@ export default function Home() {
             </HeroTextIn>
           </h1>
           <Button
-            className={cn(s.cta, introOut && s.in)}
+            className={cn(s.cta, introOut && s.in, 'ultimate-z-index')}
             arrow
             icon={<GitHub />}
             href="https://github.com/studio-freight/lenis"
