@@ -42,6 +42,9 @@ html.lenis-stopped {
 
 body {
   min-height: 100vh;
+  background-image: url('/images/bg-long.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 // custom cursor
@@ -87,4 +90,8 @@ svg.icon {
 
 .intro {
   overflow: hidden;
+}
+
+.ultimate-z-index {
+  z-index: 9999 !important;
 }

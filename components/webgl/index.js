@@ -14,6 +14,7 @@ import {
   MeshPhysicalMaterial,
   Vector2,
   Vector3,
+  MeshStandardMaterial
 } from 'three'
 import fragmentShader from './particles/fragment.glsl'
 import vertexShader from './particles/vertex.glsl'
@@ -137,9 +138,9 @@ function Particles({
 
 const steps = [
   {
-    position: [-0.1, -1.75, 0],
-    scale: 0.045,
-    rotation: [0, Math.PI * 0.5, 0],
+    position: [0, 0, 0],
+    scale: 0.02,
+    rotation: [Math.PI * 0.5, 0, 0],
     type: 1,
   },
   {
@@ -193,7 +194,7 @@ const steps = [
     type: 1,
   },
   {
-    position: [0.16, -1.38, 0],
+    position: [0.16, 0, 0],
     scale: 0.05,
     rotation: [
       MathUtils.degToRad(0),
@@ -203,7 +204,7 @@ const steps = [
     type: 2,
   },
   {
-    position: [0, -0.68, 0],
+    position: [0, 0, 0],
     scale: 0.04,
     rotation: [
       MathUtils.degToRad(0),
@@ -213,7 +214,7 @@ const steps = [
     type: 2,
   },
   {
-    position: [-0.22, -0.61, 0],
+    position: [-0.22, 0, 0],
     scale: 0.03,
     rotation: [
       MathUtils.degToRad(0),
@@ -223,7 +224,7 @@ const steps = [
     type: 2,
   },
   {
-    position: [0.2, -0.46, 0],
+    position: [0.2, 0, 0],
     scale: 0.03,
     rotation: [
       MathUtils.degToRad(0),
@@ -245,8 +246,8 @@ const material = new MeshPhysicalMaterial({
 })
 
 export function Arm() {
-  const { scene: arm1 } = useGLTF('/models/arm.glb')
-  const { scene: arm2 } = useGLTF('/models/arm2.glb')
+  const { scene: arm1 } = useGLTF('/models/future-of-halal.glb')
+  const { scene: arm2 } = useGLTF('/models/future-of-halal.glb')
   const [type, setType] = useState(1)
 
   const [{ color, roughness, metalness, wireframe }, setMaterial] = useControls(
@@ -308,8 +309,8 @@ export function Arm() {
         value: 1,
         max: 1,
       },
-      lightsColor: '#FF98A2',
-      ambientColor: '#0E0E0E',
+      lightsColor: '#FFF',
+      ambientColor: '#FFF',
     }),
     []
   )
@@ -350,21 +351,21 @@ export function Arm() {
     material.wireframe = wireframe
   }, [color, roughness, metalness, wireframe, material])
 
-  useEffect(() => {
-    if (arm1) {
-      arm1.traverse((node) => {
-        if (node.material) node.material = material
-      })
-    }
-  }, [arm1, material])
+  // useEffect(() => {
+  //   if (arm1) {
+  //     arm1.traverse((node) => {
+  //       if (node.material) node.material = material
+  //     })
+  //   }
+  // }, [arm1, material])
 
-  useEffect(() => {
-    if (arm2) {
-      arm2.traverse((node) => {
-        if (node.material) node.material = material
-      })
-    }
-  }, [arm2, material])
+  // useEffect(() => {
+  //   if (arm2) {
+  //     arm2.traverse((node) => {
+  //       if (node.material) node.material = material
+  //     })
+  //   }
+  // }, [arm2, material])
 
   const parent = useRef()
 
@@ -377,33 +378,33 @@ export function Arm() {
 
   const [step, setStep] = useState(0)
 
-  useEffect(() => {
-    if (step === 0) {
-      setLights({
-        light1Intensity: 0.35,
-        light2Intensity: 0.15,
-        lightsColor: '#FF98A2',
-        ambientColor: '#FF98A2',
-      })
-      setMaterial({
-        color: '#b0b0b0',
-        roughness: 0.4,
-        metalness: 1,
-      })
-    } else {
-      setLights({
-        light1Intensity: 1,
-        light2Intensity: 1,
-        lightsColor: '#efefef',
-        ambientColor: '#b0B0B0',
-      })
-      setMaterial({
-        color: '#efefef',
-        roughness: 0.4,
-        metalness: 0.6,
-      })
-    }
-  }, [step])
+  // useEffect(() => {
+  //   if (step === 0) {
+  //     setLights({
+  //       light1Intensity: 0.35,
+  //       light2Intensity: 0.15,
+  //       lightsColor: '#FF98A2',
+  //       ambientColor: '#FF98A2',
+  //     })
+  //     setMaterial({
+  //       color: '#b0b0b0',
+  //       roughness: 0.4,
+  //       metalness: 1,
+  //     })
+  //   } else {
+  //     setLights({
+  //       light1Intensity: 1,
+  //       light2Intensity: 1,
+  //       lightsColor: '#efefef',
+  //       ambientColor: '#b0B0B0',
+  //     })
+  //     setMaterial({
+  //       color: '#efefef',
+  //       roughness: 0.4,
+  //       metalness: 0.6,
+  //     })
+  //   }
+  // }, [step])
 
   useScroll(
     ({ scroll }) => {
@@ -504,8 +505,8 @@ export function Arm() {
           // ]}
         >
           {/* <TransformControls mode="rotate"> */}
-          {type === 1 && <primitive object={arm1} scale={[1, 1, 1]} />}
-          {type === 2 && <primitive object={arm2} scale={[1, 1, 1]} />}
+          {type === 1 && <primitive object={arm1} scale={[40, 40, 40]} material={new MeshStandardMaterial({ metalness: 40, roughness: 0 })} />}
+          {type === 2 && <primitive object={arm2} scale={[40, 40, 40]} material={new MeshStandardMaterial({ metalness: 1, roughness: 0 })} />}
           {/* </TransformControls> */}
         </group>
       </Float>
