@@ -524,14 +524,14 @@ function Content() {
   return (
     <>
       {/* <OrbitControls makeDefault /> */}
-      <Particles
+      {/* <Particles
         width={viewport.width}
         height={viewport.height}
         depth={500}
         count={100}
         scale={500}
         size={150}
-      />
+      /> */}
 
       <Arm />
     </>

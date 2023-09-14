@@ -15,6 +15,7 @@ import { useStore } from 'lib/store'
 import dynamic from 'next/dynamic'
 import { useEffect, useRef, useState } from 'react'
 import { useIntersection, useWindowSize } from 'react-use'
+import ParticleBackground from 'components/particles-background'
 import s from './home.module.scss'
 
 const SFDR = dynamic(() => import('icons/sfdr.svg'), { ssr: false })
@@ -201,6 +202,8 @@ export default function Home() {
       <div className={s.canvas}>
         <WebGL />
       </div>
+
+      <ParticleBackground />
 
       <section className={s.hero}>
         <div className="layout-grid-inner">
@@ -414,7 +417,11 @@ export default function Home() {
           inuseRectRef(node)
           inUseRef.current = node
         }}
-        className={cn('theme-light z-[9999]', s['in-use'], visible && s.visible)}
+        className={cn(
+          'theme-light z-[9999]',
+          s['in-use'],
+          visible && s.visible
+        )}
       >
         <div className="layout-grid">
           <aside className={s.title}>
