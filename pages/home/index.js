@@ -1,7 +1,7 @@
 import { useRect } from '@studio-freight/hamo'
 import cn from 'clsx'
 
-import { Button } from 'components/button'
+import Button from 'components/controls/button'
 import { Card } from 'components/card'
 import { Title } from 'components/intro'
 import { Link } from 'components/link'
@@ -254,14 +254,20 @@ export default function Home() {
               </HeroTextIn>
             </div>
           </div>
-          <Button
+          {/* <Button
             className={cn(s.cta, introOut && s.in, 'ultimate-z-index')}
             arrow
             icon={<GitHub />}
             href="https://github.com/studio-freight/lenis"
           >
             Check it out on github
-          </Button>
+          </Button> */}
+
+          <Button
+            classNameCustom="col-span-12 md:col-span-2 md:col-start-11"
+            text="Join the Waitlist"
+            theme="light"
+          />
         </div>
       </section>
       <section className={s.why} data-lenis-scroll-snap-align="start">

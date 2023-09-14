@@ -23,10 +23,9 @@ export default function Button({ text, icon, theme, classNameCustom = '' }) {
         uppercase 
         ${
           theme === 'light'
-            ? 'bg-white text-blue-900'
-            : 'bg-blue-900 text-white'
+            ? 'bg-white text-blue-900 hover:bg-slate-300'
+            : 'bg-blue-900 text-white hover:bg-blue-800'
         } 
-        hover:bg-opacity-90 
         transition-all
         cursor-pointer
         ultimate-z-index
