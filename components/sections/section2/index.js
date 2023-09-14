@@ -33,7 +33,7 @@ function MobileTabletView() {
 
       <div className="relative pb-12 px-2 pt-4">
         <h6 className="text-teal-300 text-2xl font-extrabold">{subHeading1}</h6>
-        <p className="text-left text-slate-100 text-md my-4">{subText1}</p>
+        <p className="text-left text-slate-100 text-md font-normal my-4">{subText1}</p>
 
         <Button text="Read more" theme="dark" />
         <img
