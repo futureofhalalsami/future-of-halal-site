@@ -318,7 +318,7 @@ $intro-duration: 2050ms;
 
       @include desktop {
         grid-column: 7 / span 4;
-        margin-top: desktop-vw(256px);
+        margin-top: desktop-vw(32px);
       }
     }
   }

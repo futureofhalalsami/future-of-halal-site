@@ -8,8 +8,8 @@ const GitHub = dynamic(() => import('icons/github.svg'), { ssr: false })
 
 export const Footer = () => {
   return (
-    <footer className={cn('theme-light', s.footer)}>
-      <div className={cn(s.top, 'layout-grid hide-on-mobile')}>
+    <footer className={cn('theme-light', s.footer, 'text-white')}>
+      {/* <div className={cn(s.top, 'layout-grid hide-on-mobile')}>
         <p className={cn(s['first-line'], 'h1')}>
           Lenis is <br />
           <span className="contrast">Open source</span>
@@ -45,7 +45,7 @@ export const Footer = () => {
           <span className="contrast">Open source</span>
           <br /> & open to <br /> features, forks or prs
         </p>
-      </div>
+      </div> */}
       <div className={s.bottom}>
         <div className={s.links}>
           <Link

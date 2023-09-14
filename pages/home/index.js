@@ -230,9 +230,9 @@ export default function Home() {
       }}
       className={s.home}
     >
-      {/* <div className={s.canvas}>
+      <div className={s.canvas}>
         <WebGL />
-      </div> */}
+      </div>
 
       <ParticleBackground />
 
@@ -392,7 +392,7 @@ export default function Home() {
             </Parallax>
           </div>
           <div className={s.comparison}>
-            <Parallax speed={3}>
+            <Parallax speed={0.5}>
               <p className="p">
                 We have to give props to libraries like{' '}
                 <Link
@@ -418,55 +418,15 @@ export default function Home() {
       </section>
       <section
         ref={(node) => {
-          zoomWrapperRectRef(node)
-          zoomRef.current = node
-        }}
-        className={s.solution}
-      >
-        <div className={s.inner}>
-          <div className={s.zoom}>
-            <h2 className={cn(s.first, 'h1 vh')}>
-              so we built <br />
-              <span className="contrast">web scrolling</span>
-            </h2>
-            <h2 className={cn(s.enter, 'h3 vh')}>
-              Enter <br /> Lenis
-            </h2>
-            <h2 className={cn(s.second, 'h1 vh')}>As it should be</h2>
-          </div>
-        </div>
-      </section>
-      <section className={cn('theme-light', s.featuring)} ref={whiteRectRef}>
-        <div className={s.inner}>
-          <div className={cn('layout-block', s.intro)}>
-            <p className="p-l">
-              Lenis is an{' '}
-              <Link
-                className="contrast semi-bold"
-                href="https://github.com/studio-freight/lenis"
-              >
-                open-source library
-              </Link>{' '}
-              built to standardize scroll experiences and sauce up websites with
-              butter-smooth navigation, all while using the platform and keeping
-              it accessible.
-            </p>
-          </div>
-        </div>
-        <section ref={featuresRectRef}>
-          <FeatureCards />
-        </section>
-      </section>
-      <section
-        ref={(node) => {
           inuseRectRef(node)
           inUseRef.current = node
         }}
         className={cn(
-          'theme-light z-[9999]',
+          'theme-light ultimate-z-index',
           s['in-use'],
           visible && s.visible
         )}
+        style={{ paddingBottom: '16px' }}
       >
         <div className="layout-grid">
           <aside className={s.title}>

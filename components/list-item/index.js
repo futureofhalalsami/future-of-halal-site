@@ -16,7 +16,7 @@ export const ListItem = ({
   return (
     <Link
       href={href}
-      className={cn(className, s.item, visible && s.visible)}
+      className={cn(className, s.item, visible && s.visible, 'text-white')}
       style={{ '--i': index }}
     >
       <div className={s.inner}>
