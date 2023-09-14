@@ -146,6 +146,10 @@ $intro-duration: 2050ms;
     }
   }
 
+  .tagline {
+    grid-column: 1 / span 4;
+  }
+
   .bottom {
     width: 100%;
     overflow: hidden;

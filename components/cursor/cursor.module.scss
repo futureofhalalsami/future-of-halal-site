@@ -18,14 +18,14 @@
     position: absolute;
     transform: translate(-50%, -50%);
     border-radius: 100%;
-    border: mobile-vw(2px) solid var(--pink);
-    width: 40px;
-    height: 40px;
-    opacity: 0.4;
+    border: mobile-vw(2px) solid #fff;
+    width: 60px;
+    height: 60px;
+    opacity: 0.8;
     transition: transform 600ms var(--ease-out-expo);
 
     @include desktop {
-      border: desktop-vw(2px) solid var(--pink);
+      border: desktop-vw(4px) solid #fff;
     }
 
     &.pointer {

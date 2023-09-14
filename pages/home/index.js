@@ -16,6 +16,7 @@ import dynamic from 'next/dynamic'
 import { useEffect, useRef, useState } from 'react'
 import { useIntersection, useWindowSize } from 'react-use'
 import ParticleBackground from 'components/particles-background'
+import ScrollingText from 'components/scrolling-text'
 import s from './home.module.scss'
 
 const SFDR = dynamic(() => import('icons/sfdr.svg'), { ssr: false })
@@ -205,23 +206,37 @@ export default function Home() {
 
       <ParticleBackground />
 
-      <section className={s.hero}>
-        <div className="layout-grid-inner mt-36">
-          <Title className={s.title} />
-          <SFDR className={cn(s.icon, introOut && s.show)} />
+      <section className={cn(s.hero, 'overflow-hidden')}>
+        <div className="layout-grid-inner mt-36 w-screen">
+          {/* <Title className={s.title} /> */}
+          <ScrollingText text="Future of Halal" />
+
+          {/* <SFDR className={cn(s.icon, introOut && s.show)} /> */}
+
           <span className={cn(s.sub)}>
-            <HeroTextIn introOut={introOut}>
+            {/* <HeroTextIn introOut={introOut}>
               <h2 className={cn('h3', s.subtitle)}>Smooth Scroll</h2>
-            </HeroTextIn>
-            <HeroTextIn introOut={introOut}>
+            </HeroTextIn> */}
+            {/* <HeroTextIn introOut={introOut}>
               <h2 className={cn('p-xs', s.tm)}>
-                <span>©</span> {new Date().getFullYear()} Studio Freight
+                <span>©</span> {new Date().getFullYear()} CEO Sami
               </h2>
-            </HeroTextIn>
+            </HeroTextIn> */}
           </span>
         </div>
 
         <div className={cn(s.bottom, 'layout-grid')}>
+          <div className={s.tagline}>
+            <h1 className={cn(s.description, 'p-s2')}>
+              <HeroTextIn introOut={introOut}>
+                <p className="p-s2">Harnessing AI in the Future</p>
+              </HeroTextIn>
+              <HeroTextIn introOut={introOut}>
+                <p className="p-s2">of the $6 Trillion Halal Industry.</p>
+              </HeroTextIn>
+            </h1>
+          </div>
+
           <div
             className={cn(
               'hide-on-mobile',
@@ -239,17 +254,6 @@ export default function Home() {
               </HeroTextIn>
             </div>
           </div>
-          <h1 className={cn(s.description, 'p-s')}>
-            <HeroTextIn introOut={introOut}>
-              <p className="p-s"> A new smooth scroll library</p>
-            </HeroTextIn>
-            <HeroTextIn introOut={introOut}>
-              <p className="p-s">fresh out of the</p>
-            </HeroTextIn>
-            <HeroTextIn introOut={introOut}>
-              <p className="p-s">Studio Freight Darkroom</p>
-            </HeroTextIn>
-          </h1>
           <Button
             className={cn(s.cta, introOut && s.in, 'ultimate-z-index')}
             arrow

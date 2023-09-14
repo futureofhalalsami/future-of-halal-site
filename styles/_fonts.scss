@@ -49,6 +49,14 @@
   font-weight: 900;
 }
 
+@font-face {
+  font-family: 'Uniform';
+  src: url('/fonts/Uniform Extra Condensed Bold.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 900;
+}
+
 :root {
   --font-primary: 'Slussen';
+  --font-secondary: 'Uniform';
 }
