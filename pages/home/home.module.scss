@@ -60,11 +60,11 @@ $intro-duration: 2050ms;
   height: 100vh;
   height: calc(100 * var(--svh, 1vh));
   height: 100svh;
-  margin-bottom: mobile-vw(160px);
+  // margin-bottom: mobile-vw(160px);
   position: relative;
 
   @include mobile {
-    padding-bottom: mobile-vw(16px);
+    // padding-bottom: mobile-vw(16px);
 
     > div {
       grid-gap: mobile-vw(11px);
@@ -73,7 +73,7 @@ $intro-duration: 2050ms;
 
   @include desktop {
     height: 100vh;
-    margin-bottom: desktop-vw(320px);
+    // margin-bottom: desktop-vw(320px);
   }
 
   .title {
