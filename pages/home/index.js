@@ -237,9 +237,9 @@ export default function Home() {
       }}
       className={s.home}
     >
-      {/* <div className={s.canvas}>
+      <div className={s.canvas}>
         <WebGL />
-      </div> */}
+      </div>
 
       <ParticleBackground />
 
