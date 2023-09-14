@@ -204,6 +204,7 @@ export default function Home() {
 
       <section className={s.hero}>
         <div className="layout-grid-inner">
+          {/* <h1 style={{ position: 'absolute', bottom: 0, left: 0, zIndex: 999, fontSize: '4rem' }}>Hello World</h1> */}
           <Title className={s.title} />
           <SFDR className={cn(s.icon, introOut && s.show)} />
           <span className={cn(s.sub)}>
