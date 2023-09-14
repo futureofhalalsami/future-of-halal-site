@@ -247,7 +247,7 @@ $intro-duration: 2050ms;
   margin-bottom: mobile-vw(160px);
 
   @include desktop {
-    margin-bottom: desktop-vw(640px);
+    margin-bottom: desktop-vw(320px);
   }
 
   .sticky {

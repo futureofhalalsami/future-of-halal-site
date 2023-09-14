@@ -392,7 +392,7 @@ export default function Home() {
             </Parallax>
           </div>
           <div className={s.comparison}>
-            <Parallax speed={0.5}>
+            <Parallax speed={3}>
               <p className="p">
                 We have to give props to libraries like{' '}
                 <Link
@@ -414,35 +414,6 @@ export default function Home() {
               </p>
             </Parallax>
           </div>
-        </div>
-        <div className={s.cards} ref={cardsRectRef}>
-          <HorizontalSlides>
-            <Card
-              className={s.card}
-              number="01"
-              text="Loss of performance budget due to using CSS transforms"
-            />
-            <Card
-              className={s.card}
-              number="02"
-              text="Inaccessibility from no page search support and native scrollbar"
-            />
-            <Card
-              className={s.card}
-              number="03"
-              text="Non-negligible import costs (12.1kb - 24.34kb gzipped)"
-            />
-            <Card
-              className={s.card}
-              number="04"
-              text="Limited animation systems for complex, scroll-based animations"
-            />
-            <Card
-              className={s.card}
-              number="05"
-              text="Erasing native APIs like Intersection-Observer, CSS Sticky, etc."
-            />
-          </HorizontalSlides>
         </div>
       </section>
       <section
