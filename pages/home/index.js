@@ -203,6 +203,8 @@ export default function Home() {
       </div>
 
       <section className={s.hero}>
+        <h1 className="text-3xl font-bold underline text-teal-300">Hello world!</h1>
+
         <div className="layout-grid-inner">
           {/* <h1 style={{ position: 'absolute', bottom: 0, left: 0, zIndex: 999, fontSize: '4rem' }}>Hello World</h1> */}
           <Title className={s.title} />
