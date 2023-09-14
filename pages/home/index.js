@@ -237,9 +237,9 @@ export default function Home() {
       }}
       className={s.home}
     >
-      <div className={s.canvas}>
+      {/* <div className={s.canvas}>
         <WebGL />
-      </div>
+      </div> */}
 
       <ParticleBackground />
 
@@ -458,14 +458,17 @@ export default function Home() {
           </ul>
         </div>
       </section>
-      <section
-        className={
-          'h-screen w-full flex justify-center items-center relative'
-        }
-        ref={threeDTextRef}
-      >
-        <TextExperience />
-      </section>
+      <div className="w-full">
+        <section
+          className={'h-screen flex justify-center items-center relative'}
+          ref={threeDTextRef}
+          style={{
+            maxWidth: '-webkit-fill-available',
+          }}
+        >
+          <TextExperience />
+        </section>
+      </div>
     </Layout>
   )
 }
