@@ -33,6 +33,20 @@ const Environment = dynamic(
   }
 )
 
+const GizmoHelper = dynamic(
+  () => import('@react-three/drei').then(({ GizmoHelper }) => GizmoHelper),
+  {
+    ssr: false,
+  }
+)
+
+const GizmoViewport = dynamic(
+  () => import('@react-three/drei').then(({ GizmoViewport }) => GizmoViewport),
+  {
+    ssr: false,
+  }
+)
+
 const FutureOfHalalModel = dynamic(() => import('./future-of-halal-model'), {
   ssr: false,
 })
@@ -84,7 +98,7 @@ function FutureOfHalalExperience() {
             position={[10, 15, 10]}
             castShadow
           />
-          {/* <pointLight position={[10, 10, 10]} /> */}
+          <pointLight position={[0, 4, 0]} />
           <ContactShadows
             position={[0, -0.8, 0]}
             opacity={0.25}
@@ -92,10 +106,16 @@ function FutureOfHalalExperience() {
             blur={1.5}
             far={0.8}
           />
-          {/* <Environment preset="city" /> */}
+          {/* <Environment preset="studio" /> */}
 
           <OrbitControls />
           <Stats />
+          <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
+            <GizmoViewport
+              axisColors={['#9d4b4b', '#2f7f4f', '#3b5b9d']}
+              labelColor="white"
+            />
+          </GizmoHelper>
         </Canvas>
       )}
     </>

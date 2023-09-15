@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { useGLTF } from '@react-three/drei'
+import { useFrame } from '@react-three/fiber'
 
 const calculatePosition = () => {
   if (window.innerWidth < 520) {
@@ -29,6 +30,7 @@ const calculateScale = () => {
 
 export default function FutureOfHalal(props) {
   const { nodes, materials } = useGLTF('/models/future-of-halal.glb')
+  const ref = useRef()
   const [scale, setScale] = useState(calculateScale(window.innerWidth))
 
   useEffect(() => {
@@ -43,8 +45,13 @@ export default function FutureOfHalal(props) {
     }
   }, [])
 
+  useFrame((state) => {
+    const t = state.clock.getElapsedTime()
+    ref.current.rotation.y = t * 0.1
+  })
+
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} ref={ref}>
       <group
         position={calculatePosition()}
         scale={[scale, scale, scale]}
