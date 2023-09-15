@@ -128,6 +128,7 @@ export default function Home() {
 
   const addThreshold = useStore(({ addThreshold }) => addThreshold)
 
+  // hero
   useEffect(() => {
     addThreshold({ id: 'top', value: 0 })
   }, [])
@@ -142,6 +143,11 @@ export default function Home() {
   }, [powerUpRect])
 
   useEffect(() => {
+    const top = whiteRect.top - windowHeight
+    addThreshold({ id: 'light-start', value: top })
+  }, [whiteRect])
+
+  useEffect(() => {
     const top = whyRect.top - windowHeight / 2
     addThreshold({ id: 'why-start', value: top })
     addThreshold({
@@ -152,23 +158,12 @@ export default function Home() {
 
   useEffect(() => {
     const top = cardsRect.top - windowHeight / 2
-    addThreshold({ id: 'cards-start', value: top })
-    addThreshold({ id: 'cards-end', value: top + cardsRect.height })
+    addThreshold({ id: 'cardsRect-start', value: top })
     addThreshold({
-      id: 'red-end',
-      value: top + cardsRect.height + windowHeight,
+      id: 'cardsRect-end',
+      value: top + cardsRect.height,
     })
   }, [cardsRect])
-
-  useEffect(() => {
-    const top = whiteRect.top - windowHeight
-    addThreshold({ id: 'light-start', value: top })
-  }, [whiteRect])
-
-  useEffect(() => {
-    const top = featuresRect.top
-    addThreshold({ id: 'features', value: top })
-  }, [featuresRect])
 
   useEffect(() => {
     const top = inuseRect.top
@@ -176,14 +171,14 @@ export default function Home() {
   }, [inuseRect])
 
   useEffect(() => {
-    const top = lenis?.limit
-    addThreshold({ id: 'end', value: top })
-  }, [lenis?.limit])
-
-  useEffect(() => {
     const top = threeDTextRect.top
     addThreshold({ id: 'three-d', value: top })
   }, [threeDTextRect])
+
+  useEffect(() => {
+    const top = lenis?.limit
+    addThreshold({ id: 'end', value: top })
+  }, [lenis?.limit])
 
   useScroll((e) => {
     // console.log(
@@ -342,12 +337,13 @@ export default function Home() {
       </section>
 
       <section
+        ref={whyRectRef}
         className={cn(s.why, 'ultimate-z-index')}
         data-lenis-scroll-snap-align="start"
       >
         <div className="layout-grid">
           <h2 className={cn(s.sticky, 'h2')}>About Future Of Halal</h2>
-          <aside className={s.features} ref={whyRectRef}>
+          <aside className={s.features}>
             <div className={s.feature}>
               <h3 className={cn(s.title, 'h4')}>Future of Halal:</h3>
               <p className="p">
@@ -412,7 +408,8 @@ export default function Home() {
           </aside>
         </div>
       </section>
-      <section className={s.rethink}>
+
+      <section className={s.rethink} ref={cardsRectRef}>
         <div className={cn('layout-grid', s.pre)}>
           <div className={s.highlight} data-lenis-scroll-snap-align="start">
             <p className="h2">What the Experts Are Saying</p>
@@ -440,6 +437,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section
         ref={(node) => {
           inuseRectRef(node)
@@ -475,6 +473,7 @@ export default function Home() {
           </ul>
         </div>
       </section>
+
       <section
         className={'h-screen w-full flex justify-center items-center relative'}
         ref={threeDTextRef}

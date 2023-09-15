@@ -4,6 +4,7 @@ import { useFrame as useRaf } from '@studio-freight/hamo'
 import { useScroll } from 'hooks/use-scroll'
 import { button, useControls } from 'leva'
 import { gsap, Power4 } from 'gsap'
+import dynamic from 'next/dynamic'
 import { mapRange } from 'lib/maths'
 import { useStore } from 'lib/store'
 import { Suspense, useEffect, useMemo, useRef, useState } from 'react'
@@ -19,6 +20,20 @@ import {
 } from 'three'
 import fragmentShader from './particles/fragment.glsl'
 import vertexShader from './particles/vertex.glsl'
+
+const GizmoHelper = dynamic(
+  () => import('@react-three/drei').then(({ GizmoHelper }) => GizmoHelper),
+  {
+    ssr: false,
+  }
+)
+
+const GizmoViewport = dynamic(
+  () => import('@react-three/drei').then(({ GizmoViewport }) => GizmoViewport),
+  {
+    ssr: false,
+  }
+)
 
 function Raf({ render = true }) {
   const { advance } = useThree()
@@ -141,98 +156,112 @@ const steps = [
   {
     position: [0, 0, 0],
     scale: 0.02,
-    rotation: [Math.PI * 0.5, 0, 0],
-    type: 1,
-  },
-  {
-    position: [0.15, -0.4, 0],
-    scale: 0.02,
     rotation: [
-      MathUtils.degToRad(-45),
-      MathUtils.degToRad(-135),
-      MathUtils.degToRad(-45),
-    ],
-    type: 1,
-  },
-  {
-    position: [0.15, -0.4, 0],
-    scale: 0.02,
-    rotation: [
-      MathUtils.degToRad(45),
-      MathUtils.degToRad(-315),
-      MathUtils.degToRad(-45),
-    ],
-    type: 1,
-  },
-  {
-    position: [-0.2, -0.35, 0],
-    scale: 0.02,
-    rotation: [
-      MathUtils.degToRad(-90),
-      MathUtils.degToRad(-405),
-      MathUtils.degToRad(-45),
-    ],
-    type: 1,
-  },
-  {
-    position: [-1.2, -0.6, 0],
-    scale: 0.05,
-    rotation: [
-      MathUtils.degToRad(-90),
-      MathUtils.degToRad(-405),
-      MathUtils.degToRad(-45),
-    ],
-    type: 1,
-  },
-  {
-    position: [-1.6, -0.6, 0],
-    scale: 0.05,
-    rotation: [
-      MathUtils.degToRad(-90),
-      MathUtils.degToRad(-405),
-      MathUtils.degToRad(-45),
-    ],
-    type: 1,
-  },
-  {
-    position: [0.16, 0, 0],
-    scale: 0.05,
-    rotation: [
+      MathUtils.degToRad(100),
       MathUtils.degToRad(0),
-      MathUtils.degToRad(200),
-      MathUtils.degToRad(-16),
+      MathUtils.degToRad(20),
     ],
-    type: 2,
+    type: 1,
   },
   {
     position: [0, 0, 0],
-    scale: 0.04,
+    scale: 0.02,
     rotation: [
-      MathUtils.degToRad(0),
-      MathUtils.degToRad(-14),
-      MathUtils.degToRad(-16),
+      MathUtils.degToRad(100),
+      MathUtils.degToRad(-15),
+      MathUtils.degToRad(-90),
     ],
-    type: 2,
+    type: 1,
   },
   {
-    position: [-0.22, 0, 0],
-    scale: 0.03,
+    position: [0, 0, 0],
+    scale: 0.02,
     rotation: [
-      MathUtils.degToRad(0),
-      MathUtils.degToRad(-(157 + 360)),
-      MathUtils.degToRad(-16),
+      MathUtils.degToRad(100),
+      MathUtils.degToRad(-15),
+      MathUtils.degToRad(-90),
     ],
-    type: 2,
+    type: 1,
   },
   {
-    position: [0.2, 0, 0],
-    scale: 0.03,
+    position: [0, 0, 0],
+    scale: 0.02,
     rotation: [
-      MathUtils.degToRad(0),
-      MathUtils.degToRad(-(340 + 360)),
-      MathUtils.degToRad(-16),
+      MathUtils.degToRad(100),
+      MathUtils.degToRad(-15),
+      MathUtils.degToRad(-90),
     ],
-    type: 2,
+    type: 1,
+  },
+  {
+    position: [0, 0, 0],
+    scale: 0.02,
+    rotation: [
+      MathUtils.degToRad(100),
+      MathUtils.degToRad(-15),
+      MathUtils.degToRad(-175),
+    ],
+    type: 1,
+  },
+  {
+    position: [0.5, 0, 0],
+    scale: 0.02,
+    rotation: [
+      MathUtils.degToRad(100),
+      MathUtils.degToRad(15),
+      MathUtils.degToRad(-175),
+    ],
+    type: 1,
+  },
+  {
+    position: [0.3, 0, 0],
+    scale: 0.02,
+    rotation: [
+      MathUtils.degToRad(100),
+      MathUtils.degToRad(15),
+      MathUtils.degToRad(-200),
+    ],
+    type: 1,
+  },
+  {
+    position: [0.1, 0, 0],
+    scale: 0.02,
+    rotation: [
+      MathUtils.degToRad(100),
+      MathUtils.degToRad(15),
+      MathUtils.degToRad(-200),
+    ],
+    type: 1,
+  },
+  {
+    scale: 0.02,
+    position: [0.1, 0, 0],
+    rotation: [
+      MathUtils.degToRad(129),
+      MathUtils.degToRad(49),
+      MathUtils.degToRad(-132),
+    ],
+    type: 1,
+  },
+  {
+    scale: 0.02,
+    position: [0.05, -0.3, 0],
+    rotation: [
+      MathUtils.degToRad(183),
+      MathUtils.degToRad(76),
+      MathUtils.degToRad(-177),
+    ],
+    type: 1,
+  },
+  {
+    scale: 0.02,
+    position: [0.05, -0.3, 0],
+    rotation: [
+      MathUtils.degToRad(183),
+      MathUtils.degToRad(76),
+      MathUtils.degToRad(-177),
+    ],
+    type: 1,
   },
 ]
 
@@ -602,6 +631,13 @@ function Content() {
         scale={500}
         size={150}
       /> */}
+
+      <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
+        <GizmoViewport
+          axisColors={['#9d4b4b', '#2f7f4f', '#3b5b9d']}
+          labelColor="white"
+        />
+      </GizmoHelper>
 
       <Arm />
     </>
