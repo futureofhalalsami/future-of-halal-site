@@ -384,9 +384,7 @@ export default function Home() {
               </p>
             </div>
             <div className={s.feature}>
-              <h3 className={cn(s.title, 'h4')}>
-              capabilities of AI
-              </h3>
+              <h3 className={cn(s.title, 'h4')}>capabilities of AI</h3>
               <p className="p">
                 By leveraging the capabilities of AI,{' '}
                 <Link
@@ -421,23 +419,20 @@ export default function Home() {
           <div className={s.comparison}>
             <Parallax speed={0.5}>
               <div className=" text-teal-300 ">
-              <h3 className={cn(s.title,'h4')}>
-                By Mohammed Omar Subedar,
-              </h3>
+                <h3 className={cn(s.title, 'h4')}>By Mohammed Omar Subedar,</h3>
               </div>
               <p className="p">
-                (Chief Operating Officer, Halal
-                Monitoring Authority of Canada)<br/>
-                {' '}<br/>
-                The book {' '}
+                (Chief Operating Officer, Halal Monitoring Authority of Canada)
+                <br /> <br />
+                The book{' '}
                 <Link
                   className="contrast semi-bold"
                   href="https://github.com/locomotivemtl/locomotive-scroll"
                 >
-                 "The Future of Halal"
+                  "The Future of Halal"
                 </Link>{' '}
-                is an outstanding resource for fostering greater transparency. It
-                correlates with our vision and provides actionable advice for
+                is an outstanding resource for fostering greater transparency.
+                It correlates with our vision and provides actionable advice for
                 leveraging technology for expansion.
               </p>
             </Parallax>
@@ -450,7 +445,7 @@ export default function Home() {
           inUseRef.current = node
         }}
         className={cn(
-          'theme-light ultimate-z-index',
+          'theme-light ultimate-z-index py-4',
           s['in-use'],
           visible && s.visible
         )}
@@ -479,13 +474,10 @@ export default function Home() {
           </ul>
         </div>
       </section>
-      <div className="w-full">
+      <div className="w-full" id='text-experience'>
         <section
-          className={'h-screen flex justify-center items-center relative'}
+          className={'h-screen w-full flex justify-center items-center relative'}
           ref={threeDTextRef}
-          style={{
-            maxWidth: '-webkit-fill-available',
-          }}
         >
           <TextExperience />
         </section>

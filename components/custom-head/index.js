@@ -30,18 +30,14 @@ export function CustomHead({ title = '', description, image, keywords }) {
           name="keywords"
           content={keywords && keywords.length ? keywords.join(',') : keywords}
         />
-        <meta name="author" content="Studio Freight" />
+        <meta name="author" content="Future of Halal | CEO SAMI" />
         <meta name="referrer" content="no-referrer" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="geo.region" content="US" />
 
         {/* START FAVICON */}
         <link rel="manifest" href="/site.webmanifest" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/images/logo.png"
-        />
+        <link rel="apple-touch-icon" sizes="180x180" href="/images/logo.png" />
         <link
           rel="icon"
           type="image/png"

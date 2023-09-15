@@ -58,26 +58,17 @@ export const Footer = () => {
             className={cn(s.link, 'p-xs')}
             href="https://github.com/studio-freight"
           >
-            GitHub
+            Instagram
           </Link>
           <Link
             className={cn(s.link, 'p-xs')}
             href="https://awwwards.com/studiofreight"
           >
-            Awwwards
-          </Link>
-          <Link className={cn(s.link, 'p-xs')} href="https://studiofreight.com">
-            Website
-          </Link>
-          <Link
-            className={cn(s.link, 'p-xs')}
-            href="https://darkroom.studiofreight.com"
-          >
-            Darkroom
+            Linkedin
           </Link>
         </div>
         <p className={cn('p-xs', s.tm)}>
-          <span>©</span> {new Date().getFullYear()} Studio Freight
+          <span>©</span> {new Date().getFullYear()} Future of Halal | CEO SAMI
         </p>
         <Button
           className={cn(s.cta, 'hide-on-desktop')}
