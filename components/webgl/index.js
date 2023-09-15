@@ -277,7 +277,6 @@ const material = new MeshPhysicalMaterial({
 
 export function Arm() {
   const { scene: arm1 } = useGLTF('/models/future-of-halal.glb')
-  const { scene: arm2 } = useGLTF('/models/future-of-halal.glb')
   const [type, setType] = useState(1)
 
   const [{ color, roughness, metalness, wireframe }, setMaterial] = useControls(
@@ -559,6 +558,20 @@ export function Arm() {
     }
   }, [parent.current])
 
+  const calculateScale = () => {
+    let scale = null;
+    if (window.innerWidth < 460) {
+      scale = 15
+    } else if (window.innerWidth < 960) {
+      scale = 20
+    } else if (window.innerWidth < 1280) {
+      scale = 30
+    } else {
+      scale = 40
+    }
+    return [scale, scale, scale]
+  }
+
   return (
     <>
       <ambientLight args={[new Color(ambientColor)]} />
@@ -591,18 +604,9 @@ export function Arm() {
           {type === 1 && (
             <primitive
               object={arm1}
-              scale={[40, 40, 40]}
+              scale={calculateScale()}
               material={
                 new MeshStandardMaterial({ metalness: 40, roughness: 0 })
-              }
-            />
-          )}
-          {type === 2 && (
-            <primitive
-              object={arm2}
-              scale={[40, 40, 40]}
-              material={
-                new MeshStandardMaterial({ metalness: 1, roughness: 0 })
               }
             />
           )}
