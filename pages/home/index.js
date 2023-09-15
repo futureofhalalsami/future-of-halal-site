@@ -297,7 +297,7 @@ export default function Home() {
             className={cn(
               s.cta,
               introOut && s.in,
-              'col-span-12 md:col-span-2 md:col-start-11'
+              'col-span-12 md:col-span-2 md:col-start-11 ultimate-z-index'
             )}
           >
             <Button
@@ -341,7 +341,10 @@ export default function Home() {
         <Section3Content />
       </section>
 
-      <section className={s.why} data-lenis-scroll-snap-align="start">
+      <section
+        className={cn(s.why, 'ultimate-z-index')}
+        data-lenis-scroll-snap-align="start"
+      >
         <div className="layout-grid">
           <h2 className={cn(s.sticky, 'h2')}>About Future Of Halal</h2>
           <aside className={s.features} ref={whyRectRef}>
@@ -412,9 +415,7 @@ export default function Home() {
       <section className={s.rethink}>
         <div className={cn('layout-grid', s.pre)}>
           <div className={s.highlight} data-lenis-scroll-snap-align="start">
-            <Parallax speed={-0.5}>
-              <p className="h2">What the Experts Are Saying:</p>
-            </Parallax>
+            <p className="h2">What the Experts Are Saying</p>
           </div>
           <div className={s.comparison}>
             <Parallax speed={0.5}>
@@ -445,15 +446,15 @@ export default function Home() {
           inUseRef.current = node
         }}
         className={cn(
-          'theme-light ultimate-z-index py-4',
+          'theme-light ultimate-z-index',
           s['in-use'],
           visible && s.visible
         )}
-        style={{ paddingBottom: '16px' }}
+        style={{ paddingBottom: '124px' }}
       >
         <div className="layout-grid">
           <aside className={s.title}>
-            <p className="h3 text-white	 ">
+            <p className="h3 text-white">
               CEO
               <br />
               <span className="text-teal-300 ">SAMI</span>
@@ -474,14 +475,12 @@ export default function Home() {
           </ul>
         </div>
       </section>
-      <div className="w-full" id='text-experience'>
-        <section
-          className={'h-screen w-full flex justify-center items-center relative'}
-          ref={threeDTextRef}
-        >
-          <TextExperience />
-        </section>
-      </div>
+      <section
+        className={'h-screen w-full flex justify-center items-center relative'}
+        ref={threeDTextRef}
+      >
+        <TextExperience />
+      </section>
     </Layout>
   )
 }
