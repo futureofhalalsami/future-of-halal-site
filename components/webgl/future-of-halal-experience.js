@@ -3,18 +3,6 @@ import React, { useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useGLTF, Stage } from '@react-three/drei'
 import dynamic from 'next/dynamic'
-import { useControls } from 'leva'
-import {
-  EffectComposer,
-  ToneMapping,
-  HueSaturation,
-} from '@react-three/postprocessing'
-import {
-  Bloom,
-  DepthOfField,
-  Noise,
-  Vignette,
-} from '@react-three/postprocessing'
 import { BlendFunction } from 'postprocessing'
 
 const OrbitControls = dynamic(
@@ -130,7 +118,7 @@ function FutureOfHalalExperience() {
             height: '100vh',
           }}
         >
-          <ambientLight intensity={0.3} />
+          <ambientLight intensity={0.7} />
           {/* <spotLight
             intensity={0.1}
             angle={0.1}
@@ -146,16 +134,16 @@ function FutureOfHalalExperience() {
             far={0.8}
           /> */}
           <pointLight position={[0, 0, 3]} intensity={1} />
-          {/* <Environment preset="night" ground={false} /> */}
+          {/* <Environment preset="night" ground={true} /> */}
 
-          <Stage
+          {/* <Stage
             controls={ref}
-            preset="rembrandt"
+            preset="rembrandt"  
             intensity={0.2}
             environment="night"
-          >
-            <FutureOfHalalModel />
-          </Stage>
+          > */}
+          <FutureOfHalalModel />
+          {/* </Stage> */}
 
           <CanvasHelper />
         </Canvas>

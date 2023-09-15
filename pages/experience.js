@@ -14,7 +14,7 @@ const FutureOfHalalExperience = dynamic(
 
 export default function Experience() {
   return (
-    <div className='w-full'>
+    <div className="w-full">
       <div className="flex flex-row justify-between w-full px-8 pt-4 absolute top-0 ultimate-z-index">
         <a href="/">
           <Button
@@ -31,7 +31,9 @@ export default function Experience() {
         </a>
       </div>
 
-      <FutureOfHalalExperience />
+      <React.Suspense fallback={<div>loading...</div>}>
+        <FutureOfHalalExperience />
+      </React.Suspense>
     </div>
   )
 }

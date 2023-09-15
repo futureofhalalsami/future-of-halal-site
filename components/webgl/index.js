@@ -478,9 +478,8 @@ export function Arm() {
   const heroSectionRefs = useStore(({ heroSectionRefs }) => heroSectionRefs)
 
   useEffect(() => {
-    if (modelRef.current) {
+    if (parent.current) {
       const t1 = gsap.timeline().delay(1)
-
       t1.to(heroSectionRefs.hexa1Ref.current, {
         delay: 1,
         opacity: 1,
@@ -500,6 +499,25 @@ export function Arm() {
           },
           '<'
         )
+        // .to(
+        //   parent.current.position,
+        //   {
+        //     y: 0,
+        //     duration: 4,
+        //     ease: Power4.easeOut,
+        //   },
+        //   '<'
+        // )
+        // .to(
+        //   parent.current.rotation,
+        //   {
+        //     z: MathUtils.degToRad(30),
+        //     y: 0,
+        //     // duration: 2,
+        //     ease: Power4.easeOut,
+        //   },
+        //   '<'
+        // )
         .to(
           heroSectionRefs.scrollingTextRef.current,
           {
@@ -507,25 +525,8 @@ export function Arm() {
           },
           '<'
         )
-        .to(modelRef.current.position, {
-          delay: 2,
-          duration: 4,
-          y: 0,
-          x: 0,
-          ease: Power4.easeOut,
-        })
-        .to(
-          modelRef.current.rotation,
-          {
-            delay: 2,
-            duration: 3,
-            y: MathUtils.degToRad(0),
-            ease: Power4.easeOut,
-          },
-          '<'
-        )
     }
-  }, [modelRef.current])
+  }, [parent.current])
 
   const calculateScale = () => {
     let scale = null
@@ -557,8 +558,8 @@ export function Arm() {
         <group ref={parent}>
           <primitive
             ref={modelRef}
-            position={[-120, -250, 0]}
-            rotation={[0, 2, 0]}
+            // position={[-120, -250, 0]}
+            // rotation={[0, 0.5, 0]}
             object={arm1}
             scale={calculateScale()}
             material={new MeshStandardMaterial({ metalness: 40, roughness: 0 })}
