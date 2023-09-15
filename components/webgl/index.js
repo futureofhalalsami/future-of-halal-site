@@ -397,6 +397,7 @@ export function Arm() {
   // }, [arm2, material])
 
   const parent = useRef()
+  const modelRef = useRef()
 
   const { viewport } = useThree()
 
@@ -406,34 +407,6 @@ export function Arm() {
   }, [_thresholds])
 
   const [step, setStep] = useState(0)
-
-  // useEffect(() => {
-  //   if (step === 0) {
-  //     setLights({
-  //       light1Intensity: 0.35,
-  //       light2Intensity: 0.15,
-  //       lightsColor: '#FF98A2',
-  //       ambientColor: '#FF98A2',
-  //     })
-  //     setMaterial({
-  //       color: '#b0b0b0',
-  //       roughness: 0.4,
-  //       metalness: 1,
-  //     })
-  //   } else {
-  //     setLights({
-  //       light1Intensity: 1,
-  //       light2Intensity: 1,
-  //       lightsColor: '#efefef',
-  //       ambientColor: '#b0B0B0',
-  //     })
-  //     setMaterial({
-  //       color: '#efefef',
-  //       roughness: 0.4,
-  //       metalness: 0.6,
-  //     })
-  //   }
-  // }, [step])
 
   useScroll(
     ({ scroll }) => {
@@ -466,8 +439,6 @@ export function Arm() {
     const from = steps[current]
     const to = steps[current + 1]
 
-    // return
-
     if (parent.current) {
       parent.current.visible = from?.type === to?.type
     }
@@ -495,21 +466,14 @@ export function Arm() {
     parent.current.rotation.copy(_rotation)
 
     setType(to.type)
-    // const target = new Quaternion().setFromEuler(rotation)
-    // parent.current.quaternion.rotateTowards(target, 16)
   })
-
-  // const light1 = useRef()
-
-  // useHelper(light1, DirectionalLightHelper, 'green')
-
-  // const [target, setTarget] = useState()
 
   const heroSectionRefs = useStore(({ heroSectionRefs }) => heroSectionRefs)
 
   useEffect(() => {
-    if (parent.current) {
+    if (modelRef.current) {
       const t1 = gsap.timeline().delay(1)
+
       t1.to(heroSectionRefs.hexa1Ref.current, {
         delay: 1,
         opacity: 1,
@@ -529,25 +493,6 @@ export function Arm() {
           },
           '<'
         )
-        // .to(
-        //   parent.current.position,
-        //   {
-        //     y: 0,
-        //     duration: 4,
-        //     ease: Power4.easeOut,
-        //   },
-        //   '<'
-        // )
-        // .to(
-        //   parent.current.rotation,
-        //   {
-        //     z: MathUtils.degToRad(30),
-        //     y: 0,
-        //     // duration: 2,
-        //     ease: Power4.easeOut,
-        //   },
-        //   '<'
-        // )
         .to(
           heroSectionRefs.scrollingTextRef.current,
           {
@@ -555,11 +500,26 @@ export function Arm() {
           },
           '<'
         )
+        .to(modelRef.current.position, {
+          duration: 4,
+          y: 0,
+          x: 0,
+          ease: Power4.easeOut,
+        })
+        .to(
+          modelRef.current.rotation,
+          {
+            duration: 3,
+            y: MathUtils.degToRad(0),
+            ease: Power4.easeOut,
+          },
+          '<'
+        )
     }
-  }, [parent.current])
+  }, [modelRef.current])
 
   const calculateScale = () => {
-    let scale = null;
+    let scale = null
     if (window.innerWidth < 460) {
       scale = 15
     } else if (window.innerWidth < 960) {
@@ -575,48 +535,29 @@ export function Arm() {
   return (
     <>
       <ambientLight args={[new Color(ambientColor)]} />
+
       <group position={light1}>
-        {/* <mesh scale={25}>
-          <boxGeometry />
-          <meshBasicMaterial color={'red'} />
-        </mesh> */}
         <directionalLight args={[new Color(lightsColor), light1Intensity]} />
       </group>
+
       <group position={light2}>
-        {/* <mesh scale={25}>
-          <boxGeometry />
-          <meshBasicMaterial color={'red'} />
-        </mesh> */}
         <directionalLight args={[new Color(lightsColor), light2Intensity]} />
       </group>
-      <Float floatIntensity={custom ? 0 : 1} rotationIntensity={custom ? 0 : 1}>
-        <group
-          ref={parent}
-          // position={[viewport.width * 0.155, viewport.height * -0.6, 0]}
-          // scale={viewport.height * 0.023}
-          // rotation={[
-          //   MathUtils.degToRad(125),
-          //   MathUtils.degToRad(-57),
-          //   MathUtils.degToRad(140),
-          // ]}
-        >
-          {/* <TransformControls mode="rotate"> */}
-          {type === 1 && (
-            <primitive
-              object={arm1}
-              scale={calculateScale()}
-              material={
-                new MeshStandardMaterial({ metalness: 40, roughness: 0 })
-              }
-            />
-          )}
-          {/* </TransformControls> */}
-        </group>
-      </Float>
-      {/* {target && (
-        <TransformControls mode="translate" object={target} makeDefault />
-      )} */}
-      {/* <OrbitControls makeDefault /> */}
+
+      {/* <Float floatIntensity={custom ? 0 : 1} rotationIntensity={custom ? 0 : 1}> */}
+      <group ref={parent}>
+        {/* {type === 1 && ( */}
+        <primitive
+          ref={modelRef}
+          position={[-120, -250, 0]}
+          rotation={[0, 2, 0]}
+          object={arm1}
+          scale={calculateScale()}
+          material={new MeshStandardMaterial({ metalness: 40, roughness: 0 })}
+        />
+        {/* )} */}
+      </group>
+      {/* </Float> */}
     </>
   )
 }

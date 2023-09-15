@@ -474,12 +474,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        className={'h-screen w-full flex justify-center items-center relative'}
-        ref={threeDTextRef}
-      >
-        <TextExperience />
-      </section>
+      <div className="w-full overflow-hidden">
+        <section
+          className={'h-screen flex justify-center items-center relative'}
+          ref={threeDTextRef}
+        >
+          <TextExperience />
+        </section>
+      </div>
     </Layout>
   )
 }

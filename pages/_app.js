@@ -40,7 +40,7 @@ const Leva = dynamic(() => import('leva').then(({ Leva }) => Leva), {
 
 function MyApp({ Component, pageProps }) {
   // const debug = useDebug()
-  const debug = true;
+  const debug = false;
   const lenis = useStore(({ lenis }) => lenis)
 
   useScroll(ScrollTrigger.update)
