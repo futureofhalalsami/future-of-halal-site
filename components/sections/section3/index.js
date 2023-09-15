@@ -69,7 +69,7 @@ function DesktopView() {
   return (
     <div className="overflow-hidden whitespace-nowrap gap-12 h-full">
       <p className="section3-heading text-[12rem] text-teal-300 font-extrabold uppercase mx-[100px]">
-        About Future of Halal & CEO SAMI
+        Future of Halal & CEO SAMI
       </p>
     </div>
   )

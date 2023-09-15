@@ -17,7 +17,7 @@ export default function TextExperience() {
     <>
       <div className="flex flex-row justify-between w-full px-8 pt-4 absolute top-0 ultimate-z-index">
         <Link href='/experience'>
-          <Button
+          {/* <Button
             classNameCustom=""
             icon={
               <FontAwesomeIcon
@@ -27,7 +27,7 @@ export default function TextExperience() {
             }
             text="View in 360°"
             theme="light"
-          />
+          /> */}
         </Link>
 
         <Button
