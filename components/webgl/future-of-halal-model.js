@@ -6,7 +6,7 @@ export default function FutureOfHalal(props) {
 
   return (
     <group {...props} dispose={null}>
-      <group scale={[1, 0.665, 1]}>
+      <group position={[-2, 0, 0]} scale={[6, 6, 6]} rotation={[Math.PI / 2, 0, 0]}>
         <mesh geometry={nodes.Plane.geometry} material={materials.Cover} />
         <mesh geometry={nodes.Plane_1.geometry} material={materials.Pages} />
       </group>
