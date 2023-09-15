@@ -18,10 +18,24 @@ const Stats = dynamic(
   }
 )
 
-const FutureOfHalalModel = dynamic(
-  () => import('./future-of-halal-model'),
-  { ssr: false }
+const ContactShadows = dynamic(
+  () =>
+    import('@react-three/drei').then(({ ContactShadows }) => ContactShadows),
+  {
+    ssr: false,
+  }
 )
+
+const Environment = dynamic(
+  () => import('@react-three/drei').then(({ Environment }) => Environment),
+  {
+    ssr: false,
+  }
+)
+
+const FutureOfHalalModel = dynamic(() => import('./future-of-halal-model'), {
+  ssr: false,
+})
 
 function Box(props) {
   const meshRef = useRef()
@@ -60,12 +74,26 @@ function FutureOfHalalExperience() {
             height: '100vh',
           }}
         >
-          <ambientLight />
-          <pointLight position={[10, 10, 10]} />
-          {/* <Box position={[-1.2, 0, 0]} />
-          <Box position={[1.2, 0, 0]} /> */}
-
           <FutureOfHalalModel />
+
+          <ambientLight intensity={0.7} />
+          <spotLight
+            intensity={0.5}
+            angle={0.1}
+            penumbra={1}
+            position={[10, 15, 10]}
+            castShadow
+          />
+          {/* <pointLight position={[10, 10, 10]} /> */}
+          <ContactShadows
+            position={[0, -0.8, 0]}
+            opacity={0.25}
+            scale={10}
+            blur={1.5}
+            far={0.8}
+          />
+          {/* <Environment preset="city" /> */}
+
           <OrbitControls />
           <Stats />
         </Canvas>
