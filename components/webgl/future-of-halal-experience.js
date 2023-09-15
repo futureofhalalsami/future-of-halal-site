@@ -3,7 +3,7 @@ import React, { useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useGLTF, Stage } from '@react-three/drei'
 import dynamic from 'next/dynamic'
-import { useControls } from "leva";
+import { useControls } from 'leva'
 import {
   EffectComposer,
   ToneMapping,
@@ -87,20 +87,6 @@ function Box(props) {
 
 function CanvasHelper() {
   const { scene } = useThree()
-  const { hue, saturation } = useControls({
-    hue: {
-      value: 0,
-      min: 0,
-      max: Math.PI,
-      step: 0.1,
-    },
-    saturation: {
-      value: 0,
-      min: 0,
-      max: Math.PI,
-      step: 0.1,
-    },
-  })
 
   useEffect(() => {
     if (scene.environment) {
@@ -116,13 +102,13 @@ function CanvasHelper() {
       // enableZoom={true}
       // enablePan={true}
       />
-      <Stats />
-      <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
+      {/* <Stats /> */}
+      {/* <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
         <GizmoViewport
           axisColors={['#9d4b4b', '#2f7f4f', '#3b5b9d']}
           labelColor="white"
         />
-      </GizmoHelper>
+      </GizmoHelper> */}
     </>
   )
 }
@@ -146,7 +132,7 @@ function FutureOfHalalExperience() {
         >
           <ambientLight intensity={0.3} />
           {/* <spotLight
-            intensity={1}
+            intensity={0.1}
             angle={0.1}
             penumbra={1}
             position={[10, 15, 10]}
@@ -160,20 +146,16 @@ function FutureOfHalalExperience() {
             far={0.8}
           /> */}
           <pointLight position={[0, 0, 3]} intensity={1} />
-          <Environment 
-            // preset="night" 
-            ground={true} 
-            files='https://t4.ftcdn.net/jpg/03/34/93/33/360_F_334933376_H236OwWiewfLeK84mMv32yW6xA2olurt.jpg'
-          />
+          {/* <Environment preset="night" ground={false} /> */}
 
-          {/* <Stage
+          <Stage
             controls={ref}
             preset="rembrandt"
-            intensity={0.1}
+            intensity={0.2}
             environment="night"
-          > */}
+          >
             <FutureOfHalalModel />
-          {/* </Stage> */}
+          </Stage>
 
           <CanvasHelper />
         </Canvas>
