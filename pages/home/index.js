@@ -336,107 +336,112 @@ export default function Home() {
         <Section3Content />
       </section>
 
-      <section
-        ref={whyRectRef}
-        className={cn(s.why, 'ultimate-z-index')}
-        data-lenis-scroll-snap-align="start"
-      >
-        <div className="layout-grid">
-          <h2 className={cn(s.sticky, 'h2')}>About Future Of Halal</h2>
-          <aside className={s.features}>
-            <div className={s.feature}>
-              <h3 className={cn(s.title, 'h4')}>Future of Halal:</h3>
-              <p className="p">
-                Harnessing AI in the Future of the $6 Trillion Halal Industry"
-                is a groundbreaking work that delves into the untapped potential
-                of artificial intelligence (AI) in transforming the global halal
-                industry—a sector projected to be valued at a staggering $6
-                trillion by year 2025.
-              </p>
-            </div>
-            <div className={s.feature}>
-              <h3 className={cn(s.title, 'h4')}>Sami Abboud</h3>
-              <p className="p">
-                The book is written by Sami Abboud, a renowned entrepreneur and
-                business leader with over 15 years of hands-on experience
-                spearheading complex operations within highly regulated
-                industries. Known in the business world as "CEO SAMI," he has an
-                impressive track record of international business development
-                and has served as a consultant to Top 100 charities. His
-                extensive global footprint, including travel to over 50
-                countries and participation in more than 300 international
-                events, adds a layer of unparalleled expertise and credibility
-                to his insights.
-              </p>
-            </div>
-            <div className={s.feature}>
-              <h3 className={cn(s.title, 'h4')}>Book</h3>
-              <p className="p">
-                The book makes a compelling case for how AI can revolutionize
-                the halal industry by boosting efficiency, enhancing
-                transparency, and promoting sustainability. Drawing on Sami
-                Abboud's deep expertise and global perspective, it explores
-                cutting-edge AI technologies such as machine learning, data
-                analytics, and blockchain. These technologies have the potential
-                to streamline supply chain management, authenticate product
-                quality, and even forecast consumer behavior.
-              </p>
-            </div>
-            <div className={s.feature}>
-              <h3 className={cn(s.title, 'h4')}>capabilities of AI</h3>
-              <p className="p">
-                By leveraging the capabilities of AI,{' '}
-                <Link
-                  className="contrast semi-bold"
-                  href="https://github.com/locomotivemtl/locomotive-scroll"
-                >
-                  "Future of Halal"{' '}
-                </Link>{' '}
-                posits that the halal industry is poised for unprecedented
-                growth and innovation. It offers actionable strategies and
-                insights not just for entrepreneurs but also for{' '}
-                <Link
-                  className="contrast semi-bold"
-                  href="https://greensock.com/docs/v3/Plugins/ScrollSmoother"
-                >
-                  policymakers{' '}
-                </Link>
-                , aiming to set new benchmarks for ethical and sustainable
-                practices in the industry.
-              </p>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section className={s.rethink} ref={cardsRectRef}>
-        <div className={cn('layout-grid', s.pre)}>
-          <div className={s.highlight} data-lenis-scroll-snap-align="start">
-            <p className="h2">What the Experts Are Saying</p>
-          </div>
-          <div className={s.comparison}>
-            <Parallax speed={0.5}>
-              <div className=" text-teal-300 ">
-                <h3 className={cn(s.title, 'h4')}>By Mohammed Omar Subedar,</h3>
+      <div className="bg-blue-900 bg-opacity-40 ultimate-z-index py-4 my-4">
+        <section
+          ref={whyRectRef}
+          className={cn(s.why, 'ultimate-z-index')}
+          data-lenis-scroll-snap-align="start"
+        >
+          <div className="layout-grid">
+            <h2 className={cn(s.sticky, 'h2')}>About Future Of Halal</h2>
+            <aside className={s.features}>
+              <div className={s.feature}>
+                <h3 className={cn(s.title, 'h4')}>Future of Halal:</h3>
+                <p className="p">
+                  Harnessing AI in the Future of the $6 Trillion Halal Industry"
+                  is a groundbreaking work that delves into the untapped
+                  potential of artificial intelligence (AI) in transforming the
+                  global halal industry—a sector projected to be valued at a
+                  staggering $6 trillion by year 2025.
+                </p>
               </div>
-              <p className="p">
-                (Chief Operating Officer, Halal Monitoring Authority of Canada)
-                <br /> <br />
-                The book{' '}
-                <Link
-                  className="contrast semi-bold"
-                  href="https://github.com/locomotivemtl/locomotive-scroll"
-                >
-                  "The Future of Halal"
-                </Link>{' '}
-                is an outstanding resource for fostering greater transparency.
-                It correlates with our vision and provides actionable advice for
-                leveraging technology for expansion.
-              </p>
-            </Parallax>
+              <div className={s.feature}>
+                <h3 className={cn(s.title, 'h4')}>Sami Abboud</h3>
+                <p className="p">
+                  The book is written by Sami Abboud, a renowned entrepreneur
+                  and business leader with over 15 years of hands-on experience
+                  spearheading complex operations within highly regulated
+                  industries. Known in the business world as "CEO SAMI," he has
+                  an impressive track record of international business
+                  development and has served as a consultant to Top 100
+                  charities. His extensive global footprint, including travel to
+                  over 50 countries and participation in more than 300
+                  international events, adds a layer of unparalleled expertise
+                  and credibility to his insights.
+                </p>
+              </div>
+              <div className={s.feature}>
+                <h3 className={cn(s.title, 'h4')}>Book</h3>
+                <p className="p">
+                  The book makes a compelling case for how AI can revolutionize
+                  the halal industry by boosting efficiency, enhancing
+                  transparency, and promoting sustainability. Drawing on Sami
+                  Abboud's deep expertise and global perspective, it explores
+                  cutting-edge AI technologies such as machine learning, data
+                  analytics, and blockchain. These technologies have the
+                  potential to streamline supply chain management, authenticate
+                  product quality, and even forecast consumer behavior.
+                </p>
+              </div>
+              <div className={s.feature}>
+                <h3 className={cn(s.title, 'h4')}>capabilities of AI</h3>
+                <p className="p">
+                  By leveraging the capabilities of AI,{' '}
+                  <Link
+                    className="contrast semi-bold"
+                    href="https://github.com/locomotivemtl/locomotive-scroll"
+                  >
+                    "Future of Halal"{' '}
+                  </Link>{' '}
+                  posits that the halal industry is poised for unprecedented
+                  growth and innovation. It offers actionable strategies and
+                  insights not just for entrepreneurs but also for{' '}
+                  <Link
+                    className="contrast semi-bold"
+                    href="https://greensock.com/docs/v3/Plugins/ScrollSmoother"
+                  >
+                    policymakers{' '}
+                  </Link>
+                  , aiming to set new benchmarks for ethical and sustainable
+                  practices in the industry.
+                </p>
+              </div>
+            </aside>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section className={cn(s.rethink)} ref={cardsRectRef}>
+          <div className={cn('layout-grid', s.pre)}>
+            <div className={s.highlight} data-lenis-scroll-snap-align="start">
+              <p className="h2">What the Experts Are Saying</p>
+            </div>
+            <div className={s.comparison}>
+              <Parallax speed={0.5}>
+                <div className=" text-teal-300 ">
+                  <h3 className={cn(s.title, 'h4')}>
+                    By Mohammed Omar Subedar,
+                  </h3>
+                </div>
+                <p className="p">
+                  (Chief Operating Officer, Halal Monitoring Authority of
+                  Canada)
+                  <br /> <br />
+                  The book{' '}
+                  <Link
+                    className="contrast semi-bold"
+                    href="https://github.com/locomotivemtl/locomotive-scroll"
+                  >
+                    "The Future of Halal"
+                  </Link>{' '}
+                  is an outstanding resource for fostering greater transparency.
+                  It correlates with our vision and provides actionable advice
+                  for leveraging technology for expansion.
+                </p>
+              </Parallax>
+            </div>
+          </div>
+        </section>
+      </div>
 
       <section
         ref={(node) => {

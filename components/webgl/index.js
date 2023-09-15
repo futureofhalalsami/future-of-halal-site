@@ -1,4 +1,4 @@
-import { Float, useGLTF } from '@react-three/drei'
+import { Float, useGLTF, Stage } from '@react-three/drei'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useFrame as useRaf } from '@studio-freight/hamo'
 import { useScroll } from 'hooks/use-scroll'
@@ -30,6 +30,13 @@ const GizmoHelper = dynamic(
 
 const GizmoViewport = dynamic(
   () => import('@react-three/drei').then(({ GizmoViewport }) => GizmoViewport),
+  {
+    ssr: false,
+  }
+)
+
+const Environment = dynamic(
+  () => import('@react-three/drei').then(({ Environment }) => Environment),
   {
     ssr: false,
   }
@@ -501,6 +508,7 @@ export function Arm() {
           '<'
         )
         .to(modelRef.current.position, {
+          delay: 2,
           duration: 4,
           y: 0,
           x: 0,
@@ -509,6 +517,7 @@ export function Arm() {
         .to(
           modelRef.current.rotation,
           {
+            delay: 2,
             duration: 3,
             y: MathUtils.degToRad(0),
             ease: Power4.easeOut,
@@ -544,20 +553,18 @@ export function Arm() {
         <directionalLight args={[new Color(lightsColor), light2Intensity]} />
       </group>
 
-      {/* <Float floatIntensity={custom ? 0 : 1} rotationIntensity={custom ? 0 : 1}> */}
-      <group ref={parent}>
-        {/* {type === 1 && ( */}
-        <primitive
-          ref={modelRef}
-          position={[-120, -250, 0]}
-          rotation={[0, 2, 0]}
-          object={arm1}
-          scale={calculateScale()}
-          material={new MeshStandardMaterial({ metalness: 40, roughness: 0 })}
-        />
-        {/* )} */}
-      </group>
-      {/* </Float> */}
+      <Float floatIntensity={custom ? 0 : 1}>
+        <group ref={parent}>
+          <primitive
+            ref={modelRef}
+            position={[-120, -250, 0]}
+            rotation={[0, 2, 0]}
+            object={arm1}
+            scale={calculateScale()}
+            material={new MeshStandardMaterial({ metalness: 40, roughness: 0 })}
+          />
+        </group>
+      </Float>
     </>
   )
 }

@@ -1,7 +1,7 @@
 export const projects = [
   {
     title: 'Available only @ Seerah Exhibition',
-    source: 'BUY NOW',
+    source: '',
     href: '',
   },
   {
