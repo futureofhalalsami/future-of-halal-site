@@ -16,8 +16,8 @@ export default function TextExperience() {
   return (
     <>
       <div className="flex flex-row justify-between w-full px-8 pt-4 absolute top-0 ultimate-z-index">
-        <Link href='/experience'>
-          {/* <Button
+        {/* <Link href='/experience'>
+          <Button
             classNameCustom=""
             icon={
               <FontAwesomeIcon
@@ -27,8 +27,8 @@ export default function TextExperience() {
             }
             text="View in 360°"
             theme="light"
-          /> */}
-        </Link>
+          />
+        </Link> */}
 
         <Button
           classNameCustom=""
@@ -39,7 +39,7 @@ export default function TextExperience() {
             />
           }
           text="Pre-Order Now"
-          theme="dark"
+          theme="light"
         />
       </div>
 
