@@ -29,7 +29,8 @@ const calculateScale = () => {
 }
 
 export default function FutureOfHalal(props) {
-  const { nodes, materials } = useGLTF('/models/future-of-halal.glb')
+  // const { nodes, materials } = useGLTF('/models/future-of-halal.glb')
+  const { nodes, materials } = useGLTF('/models/testing.glb')
   const ref = useRef()
   const [scale, setScale] = useState(calculateScale(window.innerWidth))
 
@@ -45,10 +46,10 @@ export default function FutureOfHalal(props) {
     }
   }, [])
 
-  useFrame((state) => {
-    const t = state.clock.getElapsedTime()
-    ref.current.rotation.y = t * 0.1
-  })
+  // useFrame((state) => {
+  //   const t = state.clock.getElapsedTime()
+  //   ref.current.rotation.y = t * 0.1
+  // })
 
   return (
     <group {...props} dispose={null} ref={ref}>
@@ -57,8 +58,20 @@ export default function FutureOfHalal(props) {
         scale={[scale, scale, scale]}
         rotation={[Math.PI / 2, 0, 0]}
       >
-        <mesh geometry={nodes.Plane.geometry} material={materials.Cover} />
-        <mesh geometry={nodes.Plane_1.geometry} material={materials.Pages} />
+        <mesh
+          geometry={nodes.Plane.geometry}
+          material={materials.Cover}
+          receiveShadow
+          castShadow
+        />
+        <mesh
+          geometry={nodes.Plane_1.geometry}
+          material={materials.Pages}
+          receiveShadow
+          castShadow
+        />
+
+        {/* <meshStandardMaterial envMapIntensity={2} /> */}
       </group>
     </group>
   )

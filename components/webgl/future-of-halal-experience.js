@@ -1,8 +1,21 @@
 import { createRoot } from 'react-dom/client'
 import React, { useRef, useState, useEffect } from 'react'
-import { Canvas, useFrame } from '@react-three/fiber'
-import { useGLTF } from '@react-three/drei'
+import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { useGLTF, Stage } from '@react-three/drei'
 import dynamic from 'next/dynamic'
+import { useControls } from "leva";
+import {
+  EffectComposer,
+  ToneMapping,
+  HueSaturation,
+} from '@react-three/postprocessing'
+import {
+  Bloom,
+  DepthOfField,
+  Noise,
+  Vignette,
+} from '@react-three/postprocessing'
+import { BlendFunction } from 'postprocessing'
 
 const OrbitControls = dynamic(
   () => import('@react-three/drei').then(({ OrbitControls }) => OrbitControls),
@@ -72,8 +85,51 @@ function Box(props) {
   )
 }
 
+function CanvasHelper() {
+  const { scene } = useThree()
+  const { hue, saturation } = useControls({
+    hue: {
+      value: 0,
+      min: 0,
+      max: Math.PI,
+      step: 0.1,
+    },
+    saturation: {
+      value: 0,
+      min: 0,
+      max: Math.PI,
+      step: 0.1,
+    },
+  })
+
+  useEffect(() => {
+    if (scene.environment) {
+      scene.environment.intensity = 0
+    }
+  }, [scene])
+
+  return (
+    <>
+      <OrbitControls
+      // minPolarAngle={Math.PI / 2}
+      // maxPolarAngle={Math.PI / 2}
+      // enableZoom={true}
+      // enablePan={true}
+      />
+      <Stats />
+      <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
+        <GizmoViewport
+          axisColors={['#9d4b4b', '#2f7f4f', '#3b5b9d']}
+          labelColor="white"
+        />
+      </GizmoHelper>
+    </>
+  )
+}
+
 function FutureOfHalalExperience() {
   const [isClient, setIsClient] = useState(false)
+  const ref = useRef()
 
   useEffect(() => {
     setIsClient(true)
@@ -88,34 +144,38 @@ function FutureOfHalalExperience() {
             height: '100vh',
           }}
         >
-          <FutureOfHalalModel />
-
-          <ambientLight intensity={0.7} />
-          <spotLight
-            intensity={0.5}
+          <ambientLight intensity={0.3} />
+          {/* <spotLight
+            intensity={1}
             angle={0.1}
             penumbra={1}
             position={[10, 15, 10]}
             castShadow
-          />
-          <pointLight position={[0, 4, 0]} />
-          <ContactShadows
+          /> */}
+          {/* <ContactShadows
             position={[0, -0.8, 0]}
             opacity={0.25}
             scale={10}
             blur={1.5}
             far={0.8}
+          /> */}
+          <pointLight position={[0, 0, 3]} intensity={1} />
+          <Environment 
+            // preset="night" 
+            ground={true} 
+            files='https://t4.ftcdn.net/jpg/03/34/93/33/360_F_334933376_H236OwWiewfLeK84mMv32yW6xA2olurt.jpg'
           />
-          {/* <Environment preset="studio" /> */}
 
-          <OrbitControls />
-          <Stats />
-          <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
-            <GizmoViewport
-              axisColors={['#9d4b4b', '#2f7f4f', '#3b5b9d']}
-              labelColor="white"
-            />
-          </GizmoHelper>
+          {/* <Stage
+            controls={ref}
+            preset="rembrandt"
+            intensity={0.1}
+            environment="night"
+          > */}
+            <FutureOfHalalModel />
+          {/* </Stage> */}
+
+          <CanvasHelper />
         </Canvas>
       )}
     </>
