@@ -171,8 +171,8 @@ const steps = [
     type: 1,
   },
   {
-    position: [0, 0, 0],
-    scale: 0.02,
+    position: [0, -0.15, 0],
+    scale: 0.018,
     rotation: [
       MathUtils.degToRad(100),
       MathUtils.degToRad(-15),
@@ -181,8 +181,8 @@ const steps = [
     type: 1,
   },
   {
-    position: [0, 0, 0],
-    scale: 0.02,
+    position: [0, -0.15, 0],
+    scale: 0.018,
     rotation: [
       MathUtils.degToRad(100),
       MathUtils.degToRad(-15),

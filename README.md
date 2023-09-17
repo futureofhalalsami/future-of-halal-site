@@ -5,9 +5,8 @@
 [x] Change "About the Future of Halal" in 3rd section to "Unveiling Key Insights"
 [x] Section 3: Remove all headings and show as paragraph
 [x] Authoritative Acclaim instead of “What the Experts are saying”
-- Need to make the book smaller
+[x] Need to make the book smaller
 - Section 3: Show front of book
-- Change Book Cover
 - Blog feature
 
 -------------------------------------------------------------------------
