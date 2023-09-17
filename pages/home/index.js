@@ -383,15 +383,11 @@ export default function Home() {
             <aside className={s.features}>
               <div className={s.feature}>
                 <p className="p py-4">
-                  Future of Halal: Harnessing AI in the Future of the $6
-                  Trillion Halal Industry" is a groundbreaking work that delves
-                  into the untapped potential of artificial intelligence (AI) in
-                  transforming the global halal industry—a sector projected to
-                  be valued at a staggering $6 trillion by year 2025. Sami
-                  Abboud, a distinguished entrepreneur and business leader, has
-                  authored the book. He brings over 15 years of hands-on
-                  experience in leading complex operations within highly
-                  regulated industries.
+                  Harness the Power of Technology and Innovation to Drive
+                  Unparalleled Success in the Booming Global Halal Market.
+                  Unlock the Secrets to Thriving in the Global Halal Market:
+                  Discover Cutting-Edge Technologies and Innovations That Will
+                  Transform Your Business and Propel You to Success!
                 </p>
                 <p className="p py-4">
                   Known in the business world as "CEO SAMI," he has an

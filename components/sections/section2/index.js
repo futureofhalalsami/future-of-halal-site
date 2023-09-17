@@ -3,8 +3,7 @@ import Button from 'components/controls/button'
 
 const heading = 'Power up your business'
 const subHeading1 = 'Comprehensive Insight into the Growing Halal Market'
-const subText1 = `Unlock the secrets of the rapidly expanding $3 trillion Halal
-industry. Our book provides an in-depth analysis across key
+const subText1 = `Unlock Secret tools, softwares, and marketing tactics of the rapidly expanding $3 Trillion Halal Industry. Our book provides an in-depth analysis across key
 sectors—Branding, Tech & Digital Services, Finance, Fashion, Tourism,
 Food & Beverages, AR/VR, Beauty & Cosmetics, and Franchising—giving
 you a comprehensive understanding of how Halal is shaping global
@@ -33,7 +32,9 @@ function MobileTabletView() {
 
       <div className="relative pb-12 px-2 pt-4">
         <h6 className="text-primary text-2xl font-extrabold">{subHeading1}</h6>
-        <p className="text-left text-slate-100 text-md font-normal my-4">{subText1}</p>
+        <p className="text-left text-slate-100 text-md font-normal my-4">
+          {subText1}
+        </p>
 
         <Button text="Read more" theme="dark" />
         <img

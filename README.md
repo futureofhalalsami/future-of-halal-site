@@ -7,11 +7,20 @@
 [x] Authoritative Acclaim instead of “What the Experts are saying”
 [x] Need to make the book smaller
 - Section 3: Show front of book
-- Blog feature
+- Available only @Seerah: invert colors
+- Background colors to be lighter
+- Modify Available only @Seerah:
+    - shift to left
+    - remove CEO SAMI
+    - Invert arrow at the above to point to this section
+    - add Seerah logo
+- Update Content from document & title
 
--------------------------------------------------------------------------
+---------------------------------------------
 
 - Initial animation
 - 3D CEO Logo animation in "Available only @ Seerah Exhibition"
 - Merge "Future is Now" with Footer
 - Fix animation - responsiveness mobile/desktop
+
+- Blog feature
