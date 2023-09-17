@@ -87,10 +87,10 @@ function DesktopLaptopView() {
         />
       </div>
 
-      <div className="col-end-7 col-span-2 row-span-2 bg-opacity-30 text-center text-2xl rounded-lg m-2 p-2">
+      <div className="col-end-7 col-span-2 row-span-1 bg-opacity-30 text-center text-2xl rounded-lg m-2 p-2">
         <img src="/images/arrow-right.png" className="" alt="arrow-right" />
       </div>
-      <div className="col-start-5 col-end-7 row-span-2 text-right rounded-lg m-2 p-2">
+      <div className="col-start-5 col-end-7 flex flex-col justify-center row-span-2 text-right rounded-lg m-2 p-2">
         <h6 className="text-primary text-3xl font-extrabold">{subHeading2}</h6>
         <p className="text-slate-100 text-lg font-normal my-4">{subText2}</p>
       </div>
