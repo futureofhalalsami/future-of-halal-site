@@ -4,7 +4,7 @@
 [x] "GLobal trends and case studies" - move this up some rows
 [x] Change "About the Future of Halal" in 3rd section to "Unveiling Key Insights"
 [x] Section 3: Remove all headings and show as paragraph
-- Authoritative Acclaim instead of “What the Experts are saying”
+[x] Authoritative Acclaim instead of “What the Experts are saying”
 - Need to make the book smaller
 - Section 3: Show front of book
 - Change Book Cover

@@ -428,7 +428,7 @@ export default function Home() {
         <section className={cn(s.rethink)} ref={cardsRectRef}>
           <div className={cn('layout-grid', s.pre)}>
             <div className={s.highlight} data-lenis-scroll-snap-align="start">
-              <p className="h2">What the Experts Are Saying</p>
+              <p className="h2">Authorit-ative Acclaim</p>
             </div>
             <div className={s.comparison}>
               <Parallax speed={0.5}>
