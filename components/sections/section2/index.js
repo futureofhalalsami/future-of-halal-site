@@ -27,12 +27,12 @@ export default function Section2() {
 function MobileTabletView() {
   return (
     <div className="block lg:hidden my-8">
-      <p className="text-[2.2rem] md:text-[2rem] lg:text-[4rem] xl:text-[6rem] text-center text-teal-300 uppercase pt-8 font-uniform mb-8">
+      <p className="text-[2.2rem] md:text-[2rem] lg:text-[4rem] xl:text-[6rem] text-center text-primary uppercase pt-8 font-uniform mb-8">
         {heading}
       </p>
 
       <div className="relative pb-12 px-2 pt-4">
-        <h6 className="text-teal-300 text-2xl font-extrabold">{subHeading1}</h6>
+        <h6 className="text-primary text-2xl font-extrabold">{subHeading1}</h6>
         <p className="text-left text-slate-100 text-md font-normal my-4">{subText1}</p>
 
         <Button text="Read more" theme="dark" />
@@ -46,7 +46,7 @@ function MobileTabletView() {
 
       <div className="h-[300px]"></div>
 
-      <h6 className="text-teal-300 text-2xl font-extrabold px-2">
+      <h6 className="text-primary text-2xl font-extrabold px-2">
         {subHeading2}
       </h6>
       <p className="text-slate-100 text-md font-normal my-4 px-2 mb-16">
@@ -66,13 +66,13 @@ function DesktopLaptopView() {
   return (
     <div className="hidden lg:grid grid-cols-1 lg:grid-cols-6 grid-rows-4 gap-4 w-screen h-screen px-12">
       <div className="col-start-1 col-end-7 row-span-1 rounded-lg m-2 p-2">
-        <p className="text-[1.7rem] md:text-[2rem] lg:text-[4rem] xl:text-[6rem] text-center text-teal-300 uppercase font-uniform">
+        <p className="text-[1.7rem] md:text-[2rem] lg:text-[4rem] xl:text-[6rem] text-center text-primary uppercase font-uniform">
           {heading}
         </p>
       </div>
 
       <div className="col-start-1 col-end-3 row-span-2 rounded-lg m-2 p-2 relative">
-        <h6 className="text-teal-300 text-3xl font-extrabold">{subHeading1}</h6>
+        <h6 className="text-primary text-3xl font-extrabold">{subHeading1}</h6>
         <p className="text-left text-slate-100 text-lg font-normal my-4">
           {subText1}
         </p>
@@ -91,7 +91,7 @@ function DesktopLaptopView() {
         <img src="/images/arrow-right.png" className="" alt="arrow-right" />
       </div>
       <div className="col-start-5 col-end-7 row-span-2 text-right rounded-lg m-2 p-2">
-        <h6 className="text-teal-300 text-3xl font-extrabold">{subHeading2}</h6>
+        <h6 className="text-primary text-3xl font-extrabold">{subHeading2}</h6>
         <p className="text-slate-100 text-lg font-normal my-4">{subText2}</p>
       </div>
     </div>

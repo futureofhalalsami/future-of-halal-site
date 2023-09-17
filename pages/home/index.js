@@ -121,7 +121,7 @@ export default function Home() {
   const [whyRectRef, whyRect] = useRect()
   const [powerUpRectRef, powerUpRect] = useRect()
   const [cardsRectRef, cardsRect] = useRect()
-  const [whiteRectRef, whiteRect] = useRect()
+  // const [whiteRectRef, whiteRect] = useRect()
   const [featuresRectRef, featuresRect] = useRect()
   const [inuseRectRef, inuseRect] = useRect()
   const [threeDTextRef, threeDTextRect] = useRect()
@@ -142,10 +142,10 @@ export default function Home() {
     })
   }, [powerUpRect])
 
-  useEffect(() => {
-    const top = whiteRect.top - windowHeight
-    addThreshold({ id: 'light-start', value: top })
-  }, [whiteRect])
+  // useEffect(() => {
+  //   const top = whiteRect.top - windowHeight
+  //   addThreshold({ id: 'light-start', value: top })
+  // }, [whiteRect])
 
   useEffect(() => {
     const top = whyRect.top - windowHeight / 2
@@ -327,13 +327,49 @@ export default function Home() {
         <Section2Content />
       </section>
 
-      <section
+      {/* <section
         className={
           'section3 h-[50vh] w-full flex items-center overflow-hidden whitespace-nowrap'
         }
         ref={whiteRectRef}
       >
         <Section3Content />
+      </section> */}
+
+      <section
+        ref={(node) => {
+          inuseRectRef(node)
+          inUseRef.current = node
+        }}
+        className={cn(
+          'theme-light ultimate-z-index',
+          s['in-use'],
+          visible && s.visible
+        )}
+        style={{ paddingBottom: '124px' }}
+      >
+        <div className="layout-grid">
+          <aside className={s.title}>
+            <p className="h3 text-white">
+              CEO
+              <br />
+              <span className="text-primary">SAMI</span>
+            </p>
+          </aside>
+          <ul className={s.list}>
+            {projects.map(({ title, source, href }, i) => (
+              <li key={i}>
+                <ListItem
+                  title={title}
+                  source={source}
+                  href={href}
+                  index={i}
+                  visible={visible}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <div className="bg-blue-900 bg-opacity-40 ultimate-z-index py-4 my-4">
@@ -442,42 +478,6 @@ export default function Home() {
           </div>
         </section>
       </div>
-
-      <section
-        ref={(node) => {
-          inuseRectRef(node)
-          inUseRef.current = node
-        }}
-        className={cn(
-          'theme-light ultimate-z-index',
-          s['in-use'],
-          visible && s.visible
-        )}
-        style={{ paddingBottom: '124px' }}
-      >
-        <div className="layout-grid">
-          <aside className={s.title}>
-            <p className="h3 text-white">
-              CEO
-              <br />
-              <span className="text-teal-300 ">SAMI</span>
-            </p>
-          </aside>
-          <ul className={s.list}>
-            {projects.map(({ title, source, href }, i) => (
-              <li key={i}>
-                <ListItem
-                  title={title}
-                  source={source}
-                  href={href}
-                  index={i}
-                  visible={visible}
-                />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
 
       <div className="w-full overflow-hidden">
         <section
