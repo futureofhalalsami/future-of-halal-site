@@ -382,39 +382,27 @@ export default function Home() {
             <h2 className={cn(s.sticky, 'h2')}>Unveiling Key Insights </h2>
             <aside className={s.features}>
               <div className={s.feature}>
+                <h3 className={cn(s.title, 'h4')}>Future of Halal</h3>
                 <p className="p py-4">
                   Harness the Power of Technology and Innovation to Drive
                   Unparalleled Success in the Booming Global Halal Market.
-                  Unlock the Secrets to Thriving in the Global Halal Market:
+                  Unlocking the Secrets to Thriving in the Global Halal Market:
                   Discover Cutting-Edge Technologies and Innovations That Will
                   Transform Your Business and Propel You to Success!
                 </p>
+              </div>
+              <div className={s.feature}>
+                <h3 className={cn(s.title, 'h4')}>Sami Abboud</h3>
                 <p className="p py-4">
-                  Known in the business world as "CEO SAMI," he has an
-                  impressive track record of international business development
-                  and has served as a consultant to Top 100 charities. His
-                  extensive global footprint, including travel to over 50
-                  countries and participation in more than 300 international
-                  events, adds a layer of unparalleled expertise and credibility
-                  to his insights.
-                </p>
-                <p className="p py-4">
-                  The book makes a compelling case for how AI can revolutionize
-                  the halal industry by boosting efficiency, enhancing
-                  transparency, and promoting sustainability. Drawing on Sami
-                  Abboud's deep expertise and global perspective, it explores
-                  cutting-edge AI technologies such as machine learning, data
-                  analytics, and blockchain. These technologies have the
-                  potential to streamline supply chain management, authenticate
-                  product quality, and even forecast consumer behavior.
-                </p>
-                <p className="p py-4">
-                  By leveraging the capabilities of AI, "Future of Halal" posits
-                  that the halal industry is poised for unprecedented growth and
-                  innovation. It offers actionable strategies and insights not
-                  just for entrepreneurs but also for policymakers, aiming to
-                  set new benchmarks for ethical and sustainable practices in
-                  the industry.
+                  Written by Sami Abboud, a seasoned entrepreneur known as "CEO
+                  SAMI," explores the transformative power of AI in the booming
+                  halal sector, projected to reach $6 trillion by 2025. With 15
+                  years of experience and a global reach, Abboud argues that AI
+                  technologies like machine learning and blockchain can
+                  revolutionize the industry by improving efficiency,
+                  transparency, and sustainability. The book offers practical
+                  strategies for entrepreneurs and policymakers, aiming to set
+                  new ethical and sustainable standards.
                 </p>
               </div>
             </aside>
@@ -428,7 +416,7 @@ export default function Home() {
             </div>
             <div className={s.comparison}>
               <Parallax speed={0.5}>
-                <div className=" text-teal-300 ">
+                <div className=" text-primary">
                   <h3 className={cn(s.title, 'h4')}>
                     By Mohammed Omar Subedar,
                   </h3>

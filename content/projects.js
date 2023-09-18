@@ -1,18 +1,17 @@
 export const projects = [
   {
-    title: 'Available only @ Seerah Exhibition',
+    title: 'Available Exclusively at: Seerah Exhibition',
     source: '',
     href: '',
   },
   {
-    title: ' Get 30% off',
+    title: '30% Off: Limited-Time Book Deal',
   },
   {
-    title: ' 1 Free Entry ticket'
+    title: '1 Free Ticket to the Exhibition',
   },
   {
-    title: 'Signed copy',
-
+    title: 'Signed copy & bookmark',
   },
   // {
   //   title: 'How to Animate SVG Shapes on Scroll',
