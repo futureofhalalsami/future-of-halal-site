@@ -2,8 +2,10 @@ import { createRoot } from 'react-dom/client'
 import React, { useRef, useState, useEffect } from 'react'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useGLTF, Stage } from '@react-three/drei'
+import { useControls } from 'leva'
 import dynamic from 'next/dynamic'
 import { BlendFunction } from 'postprocessing'
+import { Color } from 'three'
 
 const OrbitControls = dynamic(
   () => import('@react-three/drei').then(({ OrbitControls }) => OrbitControls),
@@ -85,10 +87,14 @@ function CanvasHelper() {
   return (
     <>
       <OrbitControls
-      // minPolarAngle={Math.PI / 2}
-      // maxPolarAngle={Math.PI / 2}
-      // enableZoom={true}
-      // enablePan={true}
+        // minPolarAngle={Math.PI / 2}
+        // maxPolarAngle={Math.PI / 2}
+        enableZoom={true}
+        enablePan={true}
+        // minZoom={1} // minimum zoom level, for example, 0.5 times the original distance
+        // maxZoom={2} // maximum zoom level, for example, 2 times the original distance
+        maxDistance={7}
+        minDistance={4.5}
       />
       {/* <Stats /> */}
       {/* <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
@@ -109,6 +115,53 @@ function FutureOfHalalExperience() {
     setIsClient(true)
   }, [])
 
+  const [
+    {
+      lightsColor,
+      light1,
+      light2,
+      light1Intensity,
+      light2Intensity,
+      ambientColor,
+    },
+    setLights,
+  ] = useControls(
+    'lights',
+    () => ({
+      light1: {
+        step: 1,
+        value: [-159, 150, 50],
+      },
+      light2: {
+        step: 1,
+        value: [300, -100, 150],
+      },
+      // light1Intensity: {
+      //   min: 0,
+      //   value: 0.4,
+      //   max: 1,
+      // },
+      // light2Intensity: {
+      //   min: 0,
+      //   value: 0.69,
+      //   max: 1,
+      // },
+      light1Intensity: {
+        min: 0,
+        value: 1,
+        max: 1,
+      },
+      light2Intensity: {
+        min: 0,
+        value: 1,
+        max: 1,
+      },
+      lightsColor: '#000000',
+      ambientColor: '#ebebeb',
+    }),
+    []
+  )
+
   return (
     <>
       {isClient && (
@@ -118,7 +171,20 @@ function FutureOfHalalExperience() {
             height: '100vh',
           }}
         >
-          <ambientLight intensity={0.7} />
+          <ambientLight args={[new Color(ambientColor)]} />
+
+          <group position={light1}>
+            <directionalLight
+              args={[new Color(lightsColor), light1Intensity]}
+            />
+          </group>
+
+          <group position={light2}>
+            <directionalLight
+              args={[new Color(lightsColor), light2Intensity]}
+            />
+          </group>
+
           {/* <spotLight
             intensity={0.1}
             angle={0.1}
