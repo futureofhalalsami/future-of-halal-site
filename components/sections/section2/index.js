@@ -83,7 +83,7 @@ function DesktopLaptopView() {
         <img
           src="/images/arrow-left.png"
           width="150px"
-          className="absolute right-0 "
+          className="absolute right-20 rotate-180"
           alt="arrow-left"
         />
       </div>

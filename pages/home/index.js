@@ -349,13 +349,13 @@ export default function Home() {
         style={{ paddingBottom: '124px' }}
       >
         <div className="layout-grid">
-          <aside className={s.title}>
+          {/* <aside className={s.title}>
             <p className="h3 text-white">
               CEO
               <br />
               <span className="text-primary">SAMI</span>
             </p>
-          </aside>
+          </aside> */}
           <ul className={s.list}>
             {projects.map(({ title, source, href }, i) => (
               <li key={i}>

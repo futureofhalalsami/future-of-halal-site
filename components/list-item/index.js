@@ -16,13 +16,13 @@ export const ListItem = ({
   return (
     <Link
       href={href}
-      className={cn(className, s.item, visible && s.visible, 'text-white w-full')}
+      className={cn(className, s.item, visible && s.visible, 'w-full')}
       style={{ '--i': index }}
     >
       <div className={s.inner}>
         <div className={s.title}>
           <span className={s.text}>{title}</span>
-          <Arrow className={s.arrow} />
+          {/* <Arrow className={s.arrow} /> */}
         </div>
       </div>
     </Link>

@@ -7,11 +7,11 @@
 [x] Authoritative Acclaim instead of “What the Experts are saying”
 [x] Need to make the book smaller
 [x] Update Content from document & title
-- Available only @Seerah: invert colors
+[x] Available only @Seerah: invert colors
 - Modify Available only @Seerah:
+    [x] Invert arrow at the above to point to this section
     - shift to left
     - remove CEO SAMI
-    - Invert arrow at the above to point to this section
     - add Seerah logo
 - Background colors to be lighter
 - Show front of book most of the time
