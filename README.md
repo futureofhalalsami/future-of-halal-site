@@ -8,13 +8,13 @@
 [x] Need to make the book smaller
 [x] Update Content from document & title
 [x] Available only @Seerah: invert colors
-- Modify Available only @Seerah:
+[x] Modify Available only @Seerah:
     [x] Invert arrow at the above to point to this section
-    - shift to left
-    - remove CEO SAMI
-    - add Seerah logo
+    [x] remove CEO SAMI
+    [x] shift to left
 - Background colors to be lighter
 - Show front of book most of the time
+[x] Realistic Render
 
 ---------------------------------------------
 

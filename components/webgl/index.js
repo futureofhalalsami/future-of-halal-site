@@ -319,7 +319,7 @@ export function Arm() {
     () => ({
       light1: {
         step: 1,
-        value: [-200, 150, 50],
+        value: [-159, 150, 50],
       },
       light2: {
         step: 1,
@@ -345,8 +345,8 @@ export function Arm() {
         value: 1,
         max: 1,
       },
-      lightsColor: '#FFF',
-      ambientColor: '#FFF',
+      lightsColor: '#000000',
+      ambientColor: '#ebebeb',
     }),
     []
   )
