@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Button from 'components/controls/button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVrCardboard, faShoppingBag } from '@fortawesome/free-solid-svg-icons'
+import { Footer } from 'components/footer'
 
 export default function TextExperience() {
   const [isClient, setIsClient] = useState(false)
@@ -16,7 +17,7 @@ export default function TextExperience() {
   return (
     <>
       <div className="flex flex-row justify-between w-full px-8 pt-4 absolute top-0 ultimate-z-index">
-        <Link href='/experience'>
+        <Link href="/experience">
           <Button
             classNameCustom=""
             icon={
@@ -42,6 +43,9 @@ export default function TextExperience() {
           theme="light"
         />
       </div>
+
+      <Footer />
+
 
       {isClient && (
         <>

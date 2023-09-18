@@ -107,7 +107,7 @@ export function Layout({
         <Scrollbar />
         <Navigation />
         <main className={s.main}>{children}</main>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   )

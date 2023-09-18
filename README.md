@@ -12,13 +12,13 @@
     [x] Invert arrow at the above to point to this section
     [x] remove CEO SAMI
     [x] shift to left
+[x] Realistic Render
 - Background colors to be lighter
 - Show front of book most of the time
-[x] Realistic Render
 
 ---------------------------------------------
 
-- Merge "Future is Now" with Footer
+[x] Merge "Future is Now" with Footer
 - Fix animation - responsiveness mobile/desktop
 
 ---------------------------------------------
