@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://lenis.studiofreight.com
+Host: https://future-of-halal-2-0.vercel.app/
 
 # Sitemaps
-Sitemap: https://lenis.studiofreight.com/sitemap.xml
+Sitemap: https://future-of-halal-2-0.vercel.app/sitemap.xml
