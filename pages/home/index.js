@@ -372,7 +372,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="bg-blue-900 bg-opacity-40 ultimate-z-index py-4 my-4">
+      <div className="bg-zinc-900 bg-opacity-40 ultimate-z-index py-4 my-4">
         <section
           ref={whyRectRef}
           className={cn(s.why, 'ultimate-z-index')}

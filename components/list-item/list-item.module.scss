@@ -52,7 +52,7 @@
   }
 
   .title {
-    color: var(--theme-contrast);
+    color: #fff;
     display: flex;
     align-items: center;
     transition: transform 600ms var(--ease-out-expo);
@@ -119,6 +119,7 @@
       }
 
       .title {
+        color: var(--theme-contrast);
         transform: translateX(desktop-vw(16px));
 
         .arrow {

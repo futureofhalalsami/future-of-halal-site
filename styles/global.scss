@@ -40,11 +40,15 @@ html.lenis-stopped {
 //   overscroll-behavior-y: none;
 // }
 
+// body {
+//   min-height: 100vh;
+//   background-image: url('/images/bg-long.jpg');
+//   background-repeat: no-repeat;
+//   background-size: 100% 100%;
+// }
+
 body {
-  min-height: 100vh;
-  background-image: url('/images/bg-long.jpg');
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-color: #001a22;
 }
 
 // custom cursor

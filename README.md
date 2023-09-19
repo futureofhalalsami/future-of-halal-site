@@ -13,8 +13,13 @@
     [x] remove CEO SAMI
     [x] shift to left
 [x] Realistic Render
-- Background colors to be lighter
-- Show front of book most of the time
+[x] Show front of book most of the time
+[x] Change background
+[x] "Available exclusively @ Seerah" text to white
+- Top left just switch arrow to point up
+- Bring info on bottom right closer together
+- Change from “Authoritative Acclaim” to “Expert Reviews”
+- Didn't add Seerah logo as it wasn't looking good
 
 ---------------------------------------------
 
