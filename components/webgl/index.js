@@ -1,6 +1,7 @@
 import { Float, useGLTF, Stage } from '@react-three/drei'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useFrame as useRaf } from '@studio-freight/hamo'
+import { useMediaQuery } from 'react-responsive'
 import { useScroll } from 'hooks/use-scroll'
 import { button, useControls } from 'leva'
 import { gsap, Power4 } from 'gsap'
@@ -20,6 +21,12 @@ import {
 } from 'three'
 import fragmentShader from './particles/fragment.glsl'
 import vertexShader from './particles/vertex.glsl'
+import {
+  mobileSteps,
+  largeMobileSteps,
+  tabletSteps,
+  desktopSteps,
+} from './steps-config'
 
 const GizmoHelper = dynamic(
   () => import('@react-three/drei').then(({ GizmoHelper }) => GizmoHelper),
@@ -159,119 +166,6 @@ function Particles({
   )
 }
 
-const steps = [
-  {
-    position: [0, 0, 0],
-    scale: 0.02,
-    rotation: [
-      MathUtils.degToRad(100),
-      MathUtils.degToRad(0),
-      MathUtils.degToRad(20),
-    ],
-    type: 1,
-  },
-  {
-    position: [0, -0.15, 0],
-    scale: 0.018,
-    rotation: [
-      MathUtils.degToRad(100),
-      MathUtils.degToRad(-15),
-      MathUtils.degToRad(-90),
-    ],
-    type: 1,
-  },
-  {
-    position: [0, -0.15, 0],
-    scale: 0.018,
-    rotation: [
-      MathUtils.degToRad(100),
-      MathUtils.degToRad(-15),
-      MathUtils.degToRad(-90),
-    ],
-    type: 1,
-  },
-  {
-    position: [0, 0, 0],
-    scale: 0.02,
-    rotation: [
-      MathUtils.degToRad(100),
-      MathUtils.degToRad(-15),
-      MathUtils.degToRad(-90),
-    ],
-    type: 1,
-  },
-  {
-    position: [0, 0, 0],
-    scale: 0.02,
-    rotation: [
-      MathUtils.degToRad(100),
-      MathUtils.degToRad(-15),
-      MathUtils.degToRad(-175),
-    ],
-    type: 1,
-  },
-  {
-    position: [0.5, 0, 0],
-    scale: 0.02,
-    rotation: [
-      MathUtils.degToRad(100),
-      MathUtils.degToRad(15),
-      MathUtils.degToRad(-175),
-    ],
-    type: 1,
-  },
-  {
-    position: [0.3, 0, 0],
-    scale: 0.02,
-    rotation: [
-      MathUtils.degToRad(100),
-      MathUtils.degToRad(15),
-      MathUtils.degToRad(-200),
-    ],
-    type: 1,
-  },
-  {
-    position: [0.1, 0, 0],
-    scale: 0.02,
-    rotation: [
-      MathUtils.degToRad(100),
-      MathUtils.degToRad(15),
-      MathUtils.degToRad(-200),
-    ],
-    type: 1,
-  },
-  {
-    scale: 0.02,
-    position: [0.1, 0, 0],
-    rotation: [
-      MathUtils.degToRad(129),
-      MathUtils.degToRad(49),
-      MathUtils.degToRad(-132),
-    ],
-    type: 1,
-  },
-  {
-    scale: 0.02,
-    position: [0.05, -0.3, 0],
-    rotation: [
-      MathUtils.degToRad(183),
-      MathUtils.degToRad(76),
-      MathUtils.degToRad(-177),
-    ],
-    type: 1,
-  },
-  {
-    scale: 0.02,
-    position: [0.05, -0.3, 0],
-    rotation: [
-      MathUtils.degToRad(183),
-      MathUtils.degToRad(76),
-      MathUtils.degToRad(-177),
-    ],
-    type: 1,
-  },
-]
-
 // const thresholds = [0, 1000, 2000, 3000, 4000, 5000]
 
 const material = new MeshPhysicalMaterial({
@@ -285,6 +179,28 @@ const material = new MeshPhysicalMaterial({
 export function Arm() {
   const { scene: arm1 } = useGLTF('/models/future-of-halal.glb')
   const [type, setType] = useState(1)
+  const isMobile = useMediaQuery({
+    query: '(max-width: 375px)',
+  })
+  const isLargeMobile = useMediaQuery({
+    query: '(min-width: 376px) and (max-width: 576px)',
+  })
+
+  const isTablet = useMediaQuery({
+    query: '(min-width: 577px) and (max-width: 992px)',
+  })
+
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 993px)',
+  })
+
+  const steps = isMobile
+    ? mobileSteps
+    : isLargeMobile
+    ? largeMobileSteps
+    : isTablet
+    ? tabletSteps
+    : desktopSteps
 
   const [{ color, roughness, metalness, wireframe }, setMaterial] = useControls(
     () => ({
