@@ -16,9 +16,9 @@
 [x] Show front of book most of the time
 [x] Change background
 [x] "Available exclusively @ Seerah" text to white
-- Top left just switch arrow to point up
-- Bring info on bottom right closer together
-- Change from “Authoritative Acclaim” to “Expert Reviews”
+[x] Top left just switch arrow to point up
+[x] Bring info on bottom right closer together
+[x] Change from “Authoritative Acclaim” to “Expert Reviews”
 - Didn't add Seerah logo as it wasn't looking good
 
 ---------------------------------------------

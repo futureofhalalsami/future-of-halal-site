@@ -65,7 +65,7 @@ function DesktopLaptopView() {
   }, [])
 
   return (
-    <div className="hidden lg:grid grid-cols-1 lg:grid-cols-6 grid-rows-4 gap-4 w-screen h-screen px-12">
+    <div className="hidden lg:grid grid-cols-1 lg:grid-cols-6 grid-rows-5 gap-4 w-screen h-screen px-12">
       <div className="col-start-1 col-end-7 row-span-1 rounded-lg m-2 p-2">
         <p className="text-[1.7rem] md:text-[2rem] lg:text-[4rem] xl:text-[6rem] text-center text-primary uppercase font-uniform">
           {heading}
@@ -78,16 +78,19 @@ function DesktopLaptopView() {
           {subText1}
         </p>
 
-        <Button text="Pre-Order Now" theme="dark" />
+        <div className='my-20'>
+          <Button text="Pre-Order Now" theme="dark" />
+        </div>
+      </div>
 
+      <div className="col-start-1 col-end-3 row-span-1 row-start-5 m-auto">
         <img
           src="/images/arrow-left.png"
           width="150px"
-          className="absolute right-20 rotate-180"
+          className="rotate-[290deg] scale-x-[-1]"
           alt="arrow-left"
         />
       </div>
-
       <div className="col-end-7 col-span-2 row-span-1 bg-opacity-30 text-center text-2xl rounded-lg m-2 p-2">
         <img src="/images/arrow-right.png" className="" alt="arrow-right" />
       </div>

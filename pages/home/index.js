@@ -372,7 +372,7 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="bg-zinc-900 bg-opacity-40 ultimate-z-index py-4 my-4">
+      <div className="bg-zinc-900 bg-opacity-80 ultimate-z-index py-4 my-4">
         <section
           ref={whyRectRef}
           className={cn(s.why, 'ultimate-z-index')}
@@ -381,8 +381,8 @@ export default function Home() {
           <div className="layout-grid">
             <h2 className={cn(s.sticky, 'h2')}>Unveiling Key Insights </h2>
             <aside className={s.features}>
-              <div className={s.feature}>
-                <h3 className={cn(s.title, 'h4')}>Future of Halal</h3>
+              <div className='mb-12'>
+                <h3 className={cn('h4 text-primary')}>Future of Halal</h3>
                 <p className="p py-4">
                   Harness the Power of Technology and Innovation to Drive
                   Unparalleled Success in the Booming Global Halal Market.
@@ -391,8 +391,8 @@ export default function Home() {
                   Transform Your Business and Propel You to Success!
                 </p>
               </div>
-              <div className={s.feature}>
-                <h3 className={cn(s.title, 'h4')}>Sami Abboud</h3>
+              <div className='mb-12'>
+                <h3 className={cn('h4 text-primary')}>Sami Abboud</h3>
                 <p className="p py-4">
                   Written by Sami Abboud, a seasoned entrepreneur known as "CEO
                   SAMI," explores the transformative power of AI in the booming
@@ -412,7 +412,7 @@ export default function Home() {
         <section className={cn(s.rethink)} ref={cardsRectRef}>
           <div className={cn('layout-grid', s.pre)}>
             <div className={s.highlight} data-lenis-scroll-snap-align="start">
-              <p className="h2">Authorit-ative Acclaim</p>
+              <p className="h2">Expert Reviews</p>
             </div>
             <div className={s.comparison}>
               <Parallax speed={0.5}>
