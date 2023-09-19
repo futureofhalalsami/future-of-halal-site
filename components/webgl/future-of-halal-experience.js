@@ -1,5 +1,6 @@
 import { createRoot } from 'react-dom/client'
 import React, { useRef, useState, useEffect } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useGLTF, Stage } from '@react-three/drei'
 import { useControls } from 'leva'
@@ -77,6 +78,23 @@ function Box(props) {
 
 function CanvasHelper() {
   const { scene } = useThree()
+  const isMobile = useMediaQuery({
+    query: '(max-width: 375px)',
+  })
+  const isLargeMobile = useMediaQuery({
+    query: '(min-width: 376px) and (max-width: 576px)',
+  })
+
+  const isTablet = useMediaQuery({
+    query: '(min-width: 577px) and (max-width: 992px)',
+  })
+
+  const isDesktopOrLaptop = useMediaQuery({
+    query: '(min-width: 993px)',
+  })
+
+  const minDistance = isMobile ? 2.5 : isLargeMobile ? 2.5 : isTablet ? 4 : 4.5
+  const maxDistance = 7
 
   useEffect(() => {
     if (scene.environment) {
@@ -93,8 +111,8 @@ function CanvasHelper() {
         enablePan={true}
         // minZoom={1} // minimum zoom level, for example, 0.5 times the original distance
         // maxZoom={2} // maximum zoom level, for example, 2 times the original distance
-        maxDistance={7}
-        minDistance={4.5}
+        maxDistance={maxDistance}
+        minDistance={minDistance}
       />
       {/* <Stats /> */}
       {/* <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
