@@ -64,17 +64,22 @@ class Environment {
       1,
       10000
     )
-    debugger
-    if (this.container.clientWidth < 420) {
-      this.camera.position.set(0, 0, 150)
+
+    const width = this.container.clientWidth;
+    if (width < 460) {
+      return this.camera.position.set(0, 0, 180)
+    } else if (width < 960) {
+      return this.camera.position.set(0, 0, 180)
+    } else if (width < 1280) {
+      return this.camera.position.set(0, 0, 100)
     } else {
-      this.camera.position.set(0, 0, 100)
+      return this.camera.position.set(0, 0, 100)
     }
   }
 
   createRenderer() {
     this.renderer = new THREE.WebGLRenderer({
-      alpha: true
+      alpha: true,
     })
     this.renderer.setSize(
       this.container.clientWidth,
@@ -149,6 +154,10 @@ class CreateParticles {
     document.addEventListener('mousedown', this.onMouseDown.bind(this))
     document.addEventListener('mousemove', this.onMouseMove.bind(this))
     document.addEventListener('mouseup', this.onMouseUp.bind(this))
+
+    document.addEventListener('touchstart', this.onMouseDown.bind(this))
+    document.addEventListener('touchmove', this.onMouseMove.bind(this))
+    document.addEventListener('touchend', this.onMouseUp.bind(this))
   }
 
   onMouseDown() {
