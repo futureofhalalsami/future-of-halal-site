@@ -1,4 +1,5 @@
 import { Float, useGLTF, Stage } from '@react-three/drei'
+import { useDebug } from '@studio-freight/hamo'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useFrame as useRaf } from '@studio-freight/hamo'
 import { useMediaQuery } from 'react-responsive'
@@ -488,6 +489,7 @@ export function Arm() {
 
 function Content() {
   const { viewport } = useThree()
+  const debug = useDebug()
 
   return (
     <>
@@ -501,12 +503,14 @@ function Content() {
         size={150}
       /> */}
 
-      <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
-        <GizmoViewport
-          axisColors={['#9d4b4b', '#2f7f4f', '#3b5b9d']}
-          labelColor="white"
-        />
-      </GizmoHelper>
+      {debug && (
+        <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
+          <GizmoViewport
+            axisColors={['#9d4b4b', '#2f7f4f', '#3b5b9d']}
+            labelColor="white"
+          />
+        </GizmoHelper>
+      )}
 
       <Arm />
     </>
