@@ -65,15 +65,12 @@ class Environment {
       10000
     )
 
-    const width = this.container.clientWidth;
-    if (width < 460) {
-      return this.camera.position.set(0, 0, 180)
-    } else if (width < 960) {
-      return this.camera.position.set(0, 0, 180)
-    } else if (width < 1280) {
-      return this.camera.position.set(0, 0, 100)
+    if (this.container.clientWidth < 376) {
+      this.camera.position.set(0, 0, 220)
+    } else if (this.container.clientWidth < 576) {
+      this.camera.position.set(0, 0, 200)
     } else {
-      return this.camera.position.set(0, 0, 100)
+      this.camera.position.set(0, 0, 100)
     }
   }
 

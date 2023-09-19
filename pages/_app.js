@@ -40,7 +40,7 @@ const Leva = dynamic(() => import('leva').then(({ Leva }) => Leva), {
 
 function MyApp({ Component, pageProps }) {
   // const debug = useDebug()
-  const debug = true;
+  const debug = false;
   const lenis = useStore(({ lenis }) => lenis)
 
   useScroll(ScrollTrigger.update)
@@ -57,7 +57,7 @@ function MyApp({ Component, pageProps }) {
   }, [])
 
   // ScrollTrigger.defaults({ markers: process.env.NODE_ENV === 'development' })
-  ScrollTrigger.defaults({ markers: process.env.NODE_ENV === 'development' })
+  ScrollTrigger.defaults({ markers: debug })
 
   return (
     <>
