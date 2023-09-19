@@ -19,12 +19,12 @@
 [x] Top left just switch arrow to point up
 [x] Bring info on bottom right closer together
 [x] Change from “Authoritative Acclaim” to “Expert Reviews”
-- Didn't add Seerah logo as it wasn't looking good
+[x] Didn't add Seerah logo as it wasn't looking good
 
 ---------------------------------------------
 
 [x] Merge "Future is Now" with Footer
-- Fix animation - responsiveness mobile/desktop
+[x] Fix animation - responsiveness mobile/desktop
 
 ---------------------------------------------
 
