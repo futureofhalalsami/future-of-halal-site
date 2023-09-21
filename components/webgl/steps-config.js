@@ -74,6 +74,12 @@ export const mobileSteps = [
     rotation: rotation[9],
     type: 1,
   },
+  {
+    scale: 0.03,
+    position: [0, -0.2, 0],
+    rotation: rotation[9],
+    type: 1,
+  },
 ]
 
 export const largeMobileSteps = [
@@ -129,6 +135,12 @@ export const largeMobileSteps = [
     scale: 0.028,
     position: [0, -0.2, 0],
     rotation: rotation[8],
+    type: 1,
+  },
+  {
+    scale: 0.028,
+    position: [0, -0.2, 0],
+    rotation: rotation[9],
     type: 1,
   },
   {
@@ -200,6 +212,12 @@ export const tabletSteps = [
     rotation: rotation[9],
     type: 1,
   },
+  {
+    scale: 0.03,
+    position: [0, -0.2, 0],
+    rotation: rotation[9],
+    type: 1,
+  },
 ]
 
 export const desktopSteps = [
@@ -249,6 +267,12 @@ export const desktopSteps = [
     position: [0, 0, 0],
     scale: 0.02,
     rotation: rotation[7],
+    type: 1,
+  },
+  {
+    scale: 0.025,
+    position: [0, -0.22, 0],
+    rotation: rotation[8],
     type: 1,
   },
   {
