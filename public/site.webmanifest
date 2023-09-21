@@ -1,23 +1,23 @@
 {
-  "name": "Lenis",
-  "short_name": "Lenis Smooth Scroll",
-  "description": "How smooth scroll should be.",
+  "name": "Future of Halal | CEO SAMI",
+  "short_name": "Future of Halal | CEO SAMI",
+  "description": "Future of Halal | CEO SAMI",
   "icons": [
     {
-      "src": "/android-chrome-192x192.png",
+      "src": "/images/logo.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/android-chrome-512x512.png",
+      "src": "/images/logo.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any"
     }
   ],
-  "theme_color": "#ff98a2",
-  "background_color": "#efefef",
+  "theme_color": "#1c7272",
+  "background_color": "#001a22",
   "start_url": "/",
   "scope": ".",
   "display": "standalone",
