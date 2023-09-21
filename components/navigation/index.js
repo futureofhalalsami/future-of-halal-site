@@ -7,6 +7,7 @@ import { useEffect } from 'react'
 import { shallow } from 'zustand/shallow'
 import s from './navigation.module.scss'
 import Button from 'components/controls/button'
+import { contactMeBtnLink } from 'lib/config'
 
 const Navigation = () => {
   const [navIsOpen, setNavIsOpen] = useStore(
@@ -39,7 +40,7 @@ const Navigation = () => {
       />
       <hr className="h-[0.5px] w-full md:w-9/12 mx-2 my-8 bg-white border" />
 
-      <a href="https://ceosami.com" target="_blank" rel="noreferrer">
+      <a href={contactMeBtnLink} target="_blank" rel="noreferrer">
         <button
           className={`
           px-2

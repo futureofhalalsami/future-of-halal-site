@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import Button from 'components/controls/button'
+import { preOrderBtnLink } from 'lib/config'
 
 const heading = 'Power up your business'
 const subHeading1 = 'Comprehensive Insight into the Growing Halal Market'
@@ -30,13 +31,16 @@ function MobileTabletView() {
         {heading}
       </p>
 
-      <div className="relative pb-12 px-2 pt-4">
+      <div className="relative pb-12 px-2 pt-4 ultimate-z-index">
         <h6 className="text-primary text-2xl font-extrabold">{subHeading1}</h6>
         <p className="text-left text-slate-100 text-md font-normal my-4">
           {subText1}
         </p>
 
-        <Button text="Read more" theme="dark" />
+        <a href={preOrderBtnLink} target="_blank">
+          <Button text="Pre-Order Now" theme="light" />
+        </a>
+
         <img
           src="/images/arrow-left.png"
           width="60px"
@@ -72,14 +76,16 @@ function DesktopLaptopView() {
         </p>
       </div>
 
-      <div className="col-start-1 col-end-3 row-span-2 rounded-lg m-2 p-2 relative">
+      <div className="col-start-1 col-end-3 row-span-2 rounded-lg m-2 p-2 relative ultimate-z-index">
         <h6 className="text-primary text-3xl font-extrabold">{subHeading1}</h6>
         <p className="text-left text-slate-100 text-lg font-normal my-4">
           {subText1}
         </p>
 
-        <div className='my-20'>
-          <Button text="Pre-Order Now" theme="dark" />
+        <div className="my-20">
+          <a href={preOrderBtnLink} target="_blank">
+            <Button text="Pre-Order Now" theme="light" />
+          </a>
         </div>
       </div>
 

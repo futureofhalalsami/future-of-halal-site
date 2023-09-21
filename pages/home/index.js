@@ -20,6 +20,7 @@ import Section2Content from 'components/sections/section2'
 import Section3Content from 'components/sections/section3'
 import TextExperience from 'components/webgl/text-experience'
 import s from './home.module.scss'
+import { waitlistBtnLink } from 'lib/config'
 
 const SFDR = dynamic(() => import('icons/sfdr.svg'), { ssr: false })
 const GitHub = dynamic(() => import('icons/github.svg'), { ssr: false })
@@ -295,11 +296,13 @@ export default function Home() {
               'col-span-12 md:col-span-2 md:col-start-11 ultimate-z-index'
             )}
           >
-            <Button
-              text="Join the Waitlist"
-              classNameCustom="w-full ml-0 md:w-full md:m-auto lg:w-auto lg:m-0 lg:ml-auto"
-              theme="light"
-            />
+            <a href={waitlistBtnLink} target='_blank'>
+              <Button
+                text="Join the Waitlist"
+                classNameCustom="w-full ml-0 md:w-full md:m-auto lg:w-auto lg:m-0 lg:ml-auto"
+                theme="light"
+              />
+            </a>
           </div>
 
           <img
@@ -381,7 +384,7 @@ export default function Home() {
           <div className="layout-grid">
             <h2 className={cn(s.sticky, 'h2')}>Unveiling Key Insights </h2>
             <aside className={s.features}>
-              <div className='mb-12'>
+              <div className="mb-12">
                 <h3 className={cn('h4 text-primary')}>Future of Halal</h3>
                 <p className="p py-4">
                   Harness the Power of Technology and Innovation to Drive
@@ -391,7 +394,7 @@ export default function Home() {
                   Transform Your Business and Propel You to Success!
                 </p>
               </div>
-              <div className='mb-12'>
+              <div className="mb-12">
                 <h3 className={cn('h4 text-primary')}>Sami Abboud</h3>
                 <p className="p py-4">
                   Written by Sami Abboud, a seasoned entrepreneur known as "CEO

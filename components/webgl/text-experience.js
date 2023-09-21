@@ -6,6 +6,7 @@ import Button from 'components/controls/button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faVrCardboard, faShoppingBag } from '@fortawesome/free-solid-svg-icons'
 import { Footer } from 'components/footer'
+import { preOrderBtnLink } from 'lib/config'
 
 export default function TextExperience() {
   const [isClient, setIsClient] = useState(false)
@@ -31,21 +32,22 @@ export default function TextExperience() {
           />
         </Link>
 
-        <Button
-          classNameCustom=""
-          icon={
-            <FontAwesomeIcon
-              style={{ width: '22px', height: '22px' }}
-              icon={faShoppingBag}
-            />
-          }
-          text="Pre-Order Now"
-          theme="light"
-        />
+        <a href={preOrderBtnLink} target="_blank">
+          <Button
+            classNameCustom=""
+            icon={
+              <FontAwesomeIcon
+                style={{ width: '22px', height: '22px' }}
+                icon={faShoppingBag}
+              />
+            }
+            text="Pre-Order Now"
+            theme="light"
+          />
+        </a>
       </div>
 
       <Footer />
-
 
       {isClient && (
         <>
