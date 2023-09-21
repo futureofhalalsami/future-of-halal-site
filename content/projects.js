@@ -1,8 +1,6 @@
 export const projects = [
   {
     title: 'Available Exclusively at: Seerah Exhibition',
-    source: '',
-    href: '',
   },
   {
     title: '30% Off: Limited-Time Book Deal',
