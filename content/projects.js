@@ -1,15 +1,15 @@
 export const projects = [
   {
-    title: 'Available Exclusively at: Seerah Exhibition',
+    title: '$10 off Pre-order',
   },
   {
-    title: '30% Off: Limited-Time Book Deal',
+    title: '6 Months of Extensive Research',
   },
   {
-    title: '1 Free Ticket to the Exhibition',
+    title: 'Insights on tools used by major Corps.',
   },
   {
-    title: 'Signed copy & bookmark',
+    title: '1 Hour Interactive Online Training',
   },
   // {
   //   title: 'How to Animate SVG Shapes on Scroll',

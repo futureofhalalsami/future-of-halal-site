@@ -296,7 +296,7 @@ export default function Home() {
               'col-span-12 md:col-span-2 md:col-start-11 ultimate-z-index'
             )}
           >
-            <a href={waitlistBtnLink} target='_blank'>
+            <a href={waitlistBtnLink} target="_blank">
               <Button
                 text="Join the Waitlist"
                 classNameCustom="w-full ml-0 md:w-full md:m-auto lg:w-auto lg:m-0 lg:ml-auto"
@@ -412,35 +412,40 @@ export default function Home() {
           </div>
         </section>
 
-        <section className={cn(s.rethink)} ref={cardsRectRef}>
-          <div className={cn('layout-grid', s.pre)}>
-            <div className={s.highlight} data-lenis-scroll-snap-align="start">
-              <p className="h2">Expert Reviews</p>
-            </div>
-            <div className={s.comparison}>
-              <Parallax speed={0.5}>
-                <div className=" text-primary">
-                  <h3 className={cn(s.title, 'h4')}>
-                    By Mohammed Omar Subedar,
-                  </h3>
-                </div>
-                <p className="p">
-                  (Chief Operating Officer, Halal Monitoring Authority of
-                  Canada)
+        <section
+          ref={cardsRectRef}
+          className={cn(s.why, 'ultimate-z-index')}
+          data-lenis-scroll-snap-align="start"
+        >
+          <div className="layout-grid">
+            <h2 className={cn(s.sticky, 'h2')}>Expert Reviews</h2>
+            <aside className={s.features}>
+              <div className="mb-12">
+                <h3 className={cn('h4 text-primary')}>
+                  By Mohammed Omar Subedar,
+                </h3>
+                <p className="p py-4">
+                  COO, Halal Monitoring Authority of Canada
                   <br /> <br />
-                  The book{' '}
-                  <Link
-                    className="contrast semi-bold"
-                    href="https://github.com/locomotivemtl/locomotive-scroll"
-                  >
-                    "The Future of Halal"
-                  </Link>{' '}
-                  is an outstanding resource for fostering greater transparency.
-                  It correlates with our vision and provides actionable advice
-                  for leveraging technology for expansion.
+                  The book "The Future of Halal" is an outstanding resource for
+                  fostering greater transparency. It correlates with our vision
+                  and provides actionable advice for leveraging technology for
+                  expansion.
                 </p>
-              </Parallax>
-            </div>
+              </div>
+              <div className="mb-12">
+                <h3 className={cn('h4 text-primary')}>By Mahmood Qasim,,</h3>
+                <p className="p py-4">
+                  C.E.O of IDRF ( 2022 Top 100 charities Canada)
+                  <br /> <br />
+                  Sami Aboud's book, 'The Future of Halal: Harnessing AI in the
+                  future of a $6 Trillion Industry,' is a visionary guide that
+                  illuminates the transformative power of AI in the Halal
+                  sector. A must-read for those seeking to navigate the future
+                  of this dynamic industry.
+                </p>
+              </div>
+            </aside>
           </div>
         </section>
       </div>
