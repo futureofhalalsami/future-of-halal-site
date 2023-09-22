@@ -82,7 +82,7 @@ function DesktopLaptopView() {
           {subText1}
         </p>
 
-        <div className="my-20">
+        <div className="my-4">
           <a href={preOrderBtnLink} target="_blank">
             <Button text="Pre-Order Now" theme="light" />
           </a>
@@ -101,7 +101,7 @@ function DesktopLaptopView() {
         <img src="/images/arrow-right.png" className="" alt="arrow-right" />
       </div>
       <div className="col-start-5 col-end-7 flex flex-col justify-center row-span-2 text-right rounded-lg m-2 p-2">
-        <h6 className="text-primary text-3xl font-extrabold">{subHeading2}</h6>
+        <h6 className="text-primary text-3xl font-extrabold mt-20">{subHeading2}</h6>
         <p className="text-slate-100 text-lg font-normal my-4">{subText2}</p>
       </div>
     </div>

@@ -84,14 +84,14 @@ export const mobileSteps = [
 
 export const largeMobileSteps = [
   {
-    position: [-0.35, 0, 0],
-    scale: 0.03,
+    position: [-0.3, 0.05, 0],
+    scale: 0.028,
     rotation: rotation[0],
     type: 1,
   },
   {
     position: [0, -0.15, 0],
-    scale: 0.03,
+    scale: 0.025,
     rotation: rotation[1],
     type: 1,
   },

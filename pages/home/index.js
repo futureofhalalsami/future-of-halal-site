@@ -239,7 +239,7 @@ export default function Home() {
       <ParticleBackground />
 
       <section className={cn(s.hero, 'overflow-hidden')}>
-        <div className="layout-grid-inner mt-36 w-screen">
+        <div className="layout-grid-inner mt-8 md:mt-36 w-screen">
           {/* <Title className={s.title} /> */}
           <div ref={scrollingTextRef} className={cn('opacity-0')}>
             <ScrollingText text="Future of Halal" />
@@ -436,7 +436,7 @@ export default function Home() {
               <div className="mb-12">
                 <h3 className={cn('h4 text-primary')}>By Mahmood Qasim,</h3>
                 <p className="p py-4">
-                  C.E.O of IDRF ( 2022 Top 100 charities Canada)
+                  CEO, IDRF - 2022 TOP 100 Charities
                   <br /> <br />
                   Sami Aboud's book, 'The Future of Halal: Harnessing AI in the
                   future of a $6 Trillion Industry,' is a visionary guide that

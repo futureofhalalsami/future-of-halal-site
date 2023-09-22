@@ -148,6 +148,7 @@ $intro-duration: 2050ms;
 
   .tagline {
     grid-column: 1 / span 4;
+    z-index: 99999 !important;
   }
 
   .bottom {
