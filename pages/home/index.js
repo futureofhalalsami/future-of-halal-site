@@ -434,7 +434,7 @@ export default function Home() {
                 </p>
               </div>
               <div className="mb-12">
-                <h3 className={cn('h4 text-primary')}>By Mahmood Qasim,,</h3>
+                <h3 className={cn('h4 text-primary')}>By Mahmood Qasim,</h3>
                 <p className="p py-4">
                   C.E.O of IDRF ( 2022 Top 100 charities Canada)
                   <br /> <br />
