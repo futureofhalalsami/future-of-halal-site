@@ -8,26 +8,24 @@ const GitHub = dynamic(() => import('icons/github.svg'), { ssr: false })
 
 export const Footer = () => {
   return (
-    <footer
-      className={cn('theme-light', s.footer, 'text-white')}
-    >
+    <footer className={cn('theme-light', s.footer, 'text-white')}>
       <div className={s.bottom}>
         <div className={s.links}>
-          <Link
+          {/* <Link
             className={cn(s.link, 'p-xs')}
             href="https://twitter.com/studiofreight"
           >
             Twitter
-          </Link>
+          </Link> */}
           <Link
             className={cn(s.link, 'p-xs')}
-            href="https://github.com/studio-freight"
+            href="https://instagram.com/ceo.sami"
           >
             Instagram
           </Link>
           <Link
             className={cn(s.link, 'p-xs')}
-            href="https://awwwards.com/studiofreight"
+            href="https://linkedin.com/in/sami-abboud"
           >
             Linkedin
           </Link>

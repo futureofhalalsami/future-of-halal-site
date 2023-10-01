@@ -10,7 +10,7 @@
 [x] Available only @Seerah: invert colors
 [x] Modify Available only @Seerah:
     [x] Invert arrow at the above to point to this section
-    [x] remove CEO SAMI
+    [x] remove CEO SAMInp
     [x] shift to left
 [x] Realistic Render
 [x] Show front of book most of the time
